@@ -5,8 +5,10 @@ import java.util.Set;
 
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.Color;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -140,5 +142,64 @@ public class BasePage {
 	
 	public boolean isDropdownMultiple(WebDriver driver, String xpathExpression) {
 		return new Select(getElement(driver, xpathExpression)).isMultiple();
+	}
+	
+	public void selectItemInDropdown(WebDriver driver, String xpathParent, String xpathChild, String expectedText) {
+		driver.findElement(By.cssSelector(xpathParent)).click();
+		
+		List<WebElement> allItems = new WebDriverWait(driver, 30)
+				.until(ExpectedConditions.presenceOfAllElementsLocatedBy(getByXpath(xpathChild)));
+		
+		for (WebElement tempElement : allItems) {	
+			if (tempElement.getText().equals(expectedText)) {
+				((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", tempElement);
+				sleepInSecond(1);
+				
+				tempElement.click();
+				sleepInSecond(1);
+				
+				break;
+			}
+		}
+	}
+	
+	public String getElementAttribute(WebDriver driver, String xpathExpression, String attributeName) {
+		return getElement(driver, xpathExpression).getAttribute(attributeName);
+	}
+	
+	public String getElementCssValue(WebDriver driver, String xpathExpression, String propertyName) {
+		return getElement(driver, xpathExpression).getCssValue(propertyName);
+	}
+	
+	public String getHexaColorByGRBA(String rgbaColor) {
+		return Color.fromString(rgbaColor).asHex().toUpperCase();
+	}
+	
+	public int getListElementSize(WebDriver driver, String xpathExpression) {
+		return getListElement(driver, xpathExpression).size();
+	}
+	
+	public void checkToCheckboxRadio(WebDriver driver, String xpathExpression) {
+		if(!isElementSelected(driver, xpathExpression)) {
+			clickToElement(driver, xpathExpression);
+		}
+	}
+	
+	public void uncheckToCheckbox(WebDriver driver, String xpathExpression) {
+		if(isElementSelected(driver, xpathExpression)) {
+			clickToElement(driver, xpathExpression);
+		}
+	}
+	
+	public boolean isElementDisplayed(WebDriver driver, String xpathExpression) {
+		return getElement(driver, xpathExpression).isDisplayed();
+	}
+	
+	public boolean isElementSelected(WebDriver driver, String xpathExpression) {
+		return getElement(driver, xpathExpression).isSelected();
+	}
+	
+	public boolean isElementEnabled(WebDriver driver, String xpathExpression) {
+		return getElement(driver, xpathExpression).isEnabled();
 	}
 }
