@@ -1,10 +1,14 @@
 package commons;
 
+import java.util.List;
 import java.util.Set;
 
 import org.openqa.selenium.Alert;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class BasePage {
@@ -99,5 +103,42 @@ public class BasePage {
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
+	}
+	
+	public By getByXpath(String xpathExpression) {
+		return By.xpath(xpathExpression);
+	}
+	
+	public WebElement getElement(WebDriver driver, String xpathExpression) {
+		return driver.findElement(getByXpath(xpathExpression));
+	}
+	
+	public List<WebElement> getListElement(WebDriver driver, String xpathExpression) {
+		return driver.findElements(getByXpath(xpathExpression));
+	}
+	
+	public void clickToElement(WebDriver driver, String xpathExpression) {
+		getElement(driver, xpathExpression).click();
+	}
+	
+	public void sendKeyToElement(WebDriver driver, String xpathExpression, String value) {
+		getElement(driver, xpathExpression).clear();
+		getElement(driver, xpathExpression).sendKeys(value);
+	}
+	
+	public String getElementText(WebDriver driver, String xpathExpression) {
+		return getElement(driver, xpathExpression).getText();
+	}
+	
+	public void selectDropdown(WebDriver driver, String xpathExpression, String itemText) {
+		new Select(getElement(driver, xpathExpression)).selectByVisibleText(itemText);
+	}
+	
+	public String getFirstSelectedOptionText(WebDriver driver, String xpathExpression) {
+		return new Select(getElement(driver, xpathExpression)).getFirstSelectedOption().getText();
+	}
+	
+	public boolean isDropdownMultiple(WebDriver driver, String xpathExpression) {
+		return new Select(getElement(driver, xpathExpression)).isMultiple();
 	}
 }
