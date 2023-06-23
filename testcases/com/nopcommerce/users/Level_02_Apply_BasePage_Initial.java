@@ -11,6 +11,8 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
+import commons.BasePage;
+
 public class Level_02_Apply_BasePage_Initial {
 	 // Yêu cầu:
 	 // Viết làm sao có thể chạy được
@@ -34,6 +36,7 @@ public class Level_02_Apply_BasePage_Initial {
 	// Nguyên tắc: Có thế tái sử dụng/ tránh lặp lại
 	 
 	 WebDriver driver;
+	 BasePage basePage;
 	 String projectPath = System.getProperty("user.dir");
 	 
 	 @BeforeClass
@@ -41,13 +44,16 @@ public class Level_02_Apply_BasePage_Initial {
 		 System.setProperty("webdriver.gecko.driver", projectPath + "\\browserDrivers\\geckodriver.exe");
 		 driver = new FirefoxDriver();
 		 
+		 basePage = new BasePage();
 		 driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 	 }
 	  
 	 @Test
 	 public void Register_01_Empty_Data() {
-		 driver.get("https://demo.nopcommerce.com/");
+		 basePage.openUrl(driver, "https://demo.nopcommerce.com/");
+		 
 		 driver.findElement(By.cssSelector("a.ico-register")).click();
+		 basePage.clickToElement(driver, projectPath);
 		 
 		 driver.findElement(By.cssSelector("button#register-button")).click();
 		 
