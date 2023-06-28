@@ -1,5 +1,6 @@
 package pageUIs;
 
 public class HomePageUI {
-	// Chứa những locator/ element của page này
+	public static final String REGISTER_LINK = "//a[@class='ico-register]";
+	public static final String LOGIN_LINK = "//a[@class='ico-login]";
 }
