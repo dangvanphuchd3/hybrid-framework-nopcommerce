@@ -41,7 +41,6 @@ public class Level_03_Page_Object_Pattern extends BasePage {
 		 homePage.clickToRegisterLink();
 		 
 		 registerPage = new RegisterPageObject();
-		 
 		 registerPage.clickToRegisterButton();
 		 
 		 Assert.assertEquals(registerPage.getFirtNameErrorMessage(), "First name is required.");
@@ -54,19 +53,23 @@ public class Level_03_Page_Object_Pattern extends BasePage {
 	  
 	 @Test
 	 public void Register_02_Invalid_Email() {
-		 openUrl(driver, "https://demo.nopcommerce.com/");
+		 registerPage.clickToHomePageLogo();
 		 
-		 clickToElement(driver, "//a[@class='ico-register']");
+		 homePage = new HomePageObject();
 		 
-		 sendKeyToElement(driver, "//input[@id='FirstName']", "John");
-		 sendKeyToElement(driver, "//input[@id='LastName']", "Wick");
-		 sendKeyToElement(driver, "//input[@id='Email']", "johwich@123@gmail.com");
-		 sendKeyToElement(driver, "//input[@id='Password']", "123456");
-		 sendKeyToElement(driver, "//input[@id='ConfirmPassword']", "123456");
+		 homePage.clickToRegisterLink();
 		 
-		 clickToElement(driver, "//button[@id='register-button']");
+		 registerPage = new RegisterPageObject();
 		 
-		 Assert.assertEquals(getElementText(driver, "//span[@id='Email-error']"), "Wrong email");
+		 registerPage.enterToFirstNameTextbox("John");
+		 registerPage.enterToLastNameTextbox("Wick");
+		 registerPage.enterToEmailTextbox("john@wick@gmail.com");
+		 registerPage.enterToPasswordTextbox("123456");
+		 registerPage.enterToConfirmPasswordTextbox("123456");
+		 
+		 registerPage.clickToRegisterButton();
+		 
+		 Assert.assertEquals(registerPage.getEmailErrorMessage(), "Wrong email");
 		 
 	 }
 	  
