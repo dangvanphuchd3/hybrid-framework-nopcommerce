@@ -20,6 +20,7 @@ public class Level_03_Page_Object_Pattern extends BasePage {
 	
 	 WebDriver driver;
 	 String projectPath = System.getProperty("user.dir");
+	 String emailAddress = getEmailAddress();
 	 HomePageObject homePage;
 	 RegisterPageObject registerPage;
 	 LoginPageObject loginPage;
@@ -36,11 +37,11 @@ public class Level_03_Page_Object_Pattern extends BasePage {
 	  
 	 @Test
 	 public void Register_01_Empty_Data() {
-		 homePage = new HomePageObject();
+		 homePage = new HomePageObject(driver);
 		 
 		 homePage.clickToRegisterLink();
 		 
-		 registerPage = new RegisterPageObject();
+		 registerPage = new RegisterPageObject(driver);
 		 registerPage.clickToRegisterButton();
 		 
 		 Assert.assertEquals(registerPage.getFirtNameErrorMessage(), "First name is required.");
@@ -55,11 +56,11 @@ public class Level_03_Page_Object_Pattern extends BasePage {
 	 public void Register_02_Invalid_Email() {
 		 registerPage.clickToHomePageLogo();
 		 
-		 homePage = new HomePageObject();
+		 homePage = new HomePageObject(driver);
 		 
 		 homePage.clickToRegisterLink();
 		 
-		 registerPage = new RegisterPageObject();
+		 registerPage = new RegisterPageObject(driver);
 		 
 		 registerPage.enterToFirstNameTextbox("John");
 		 registerPage.enterToLastNameTextbox("Wick");
@@ -75,58 +76,85 @@ public class Level_03_Page_Object_Pattern extends BasePage {
 	  
 	 @Test
 	 public void Register_03_Invalid_Password() {
-		 openUrl(driver, "https://demo.nopcommerce.com/");
+		 registerPage.clickToHomePageLogo();
 		 
-		 clickToElement(driver, "//a[@class='ico-register']");
+		 homePage = new HomePageObject(driver);
 		 
-		 sendKeyToElement(driver, "//input[@id='FirstName']", "John");
-		 sendKeyToElement(driver, "//input[@id='LastName']", "Wick");
-		 sendKeyToElement(driver, "//input[@id='Email']", "johwich112@gmail.com");
-		 sendKeyToElement(driver, "//input[@id='Password']", "123");
-		 sendKeyToElement(driver, "//input[@id='ConfirmPassword']", "123");
+		 homePage.clickToRegisterLink();
 		 
-		 clickToElement(driver, "//button[@id='register-button']");
+		 registerPage = new RegisterPageObject(driver);
 		 
-		 Assert.assertEquals(getElementText(driver,"//span[@id='Password-error']"), "Password must meet the following rules:\n"
+		 registerPage.enterToFirstNameTextbox("John");
+		 registerPage.enterToLastNameTextbox("Wick");
+		 registerPage.enterToEmailTextbox("johnwick@gmail.com");
+		 registerPage.enterToPasswordTextbox("123");
+		 registerPage.enterToConfirmPasswordTextbox("123");
+		 
+		 registerPage.clickToRegisterButton();
+		 
+		 Assert.assertEquals(registerPage.getPasswordErrorMessage(), "Password must meet the following rules:\n"
 		 		+ "must have at least 6 characters");
 	 }
 	  
 	 @Test
 	 public void Register_04_Incorrect_Confirm_Password() {
-		 openUrl(driver, "https://demo.nopcommerce.com/");
+		 registerPage.clickToHomePageLogo();
 		 
-		 clickToElement(driver, "//a[@class='ico-register']");
+		 homePage = new HomePageObject(driver);
 		 
-		 sendKeyToElement(driver, "//input[@id='FirstName']", "John");
-		 sendKeyToElement(driver, "//input[@id='LastName']", "Wick");
-		 sendKeyToElement(driver, "//input[@id='Email']", "johwich112@gmail.com");
-		 sendKeyToElement(driver, "//input[@id='Password']", "123456");
-		 sendKeyToElement(driver, "//input[@id='ConfirmPassword']", "1234567");
+		 homePage.clickToRegisterLink();
 		 
-		 clickToElement(driver, "//button[@id='register-button']");
+		 registerPage = new RegisterPageObject(driver);
 		 
-		 Assert.assertEquals(getElementText(driver, "//span[@id='ConfirmPassword-error']"), "The password and confirmation password do not match.");
+		 registerPage.enterToFirstNameTextbox("John");
+		 registerPage.enterToLastNameTextbox("Wick");
+		 registerPage.enterToEmailTextbox("johnwick@gmail.com");
+		 registerPage.enterToPasswordTextbox("123456");
+		 registerPage.enterToConfirmPasswordTextbox("1234567");
+		 
+		 registerPage.clickToRegisterButton();
+		 
+		 Assert.assertEquals(registerPage.getConfirmPasswordErrorMessage(), "The password and confirmation password do not match.");
 	 }
 	  
 	 @Test
 	 public void Register_05_Success() {
-		 openUrl(driver, "https://demo.nopcommerce.com/");
+		 registerPage.clickToHomePageLogo();
 		 
-		 clickToElement(driver, "//a[@class='ico-register']");
+		 homePage = new HomePageObject(driver);
 		 
-		 sendKeyToElement(driver, "//input[@id='FirstName']", "John");
-		 sendKeyToElement(driver, "//input[@id='LastName']", "Wick");
-		 sendKeyToElement(driver, "//input[@id='Email']", getEmailAddress());
-		 sendKeyToElement(driver, "//input[@id='Password']", "123456");
-		 sendKeyToElement(driver, "//input[@id='ConfirmPassword']", "123456");
+		 homePage.clickToRegisterLink();
 		 
-		 clickToElement(driver, "//button[@id='register-button']");
+		 registerPage = new RegisterPageObject(driver);
 		 
-		 Assert.assertEquals(getElementText(driver, "//div[@class='result']"), "Your registration completed");
-	 }
-	 
-	 @Test
-	 public void Register_06_Verify_Login() {
+		 registerPage.enterToFirstNameTextbox("John");
+		 registerPage.enterToLastNameTextbox("Wick");
+		 registerPage.enterToEmailTextbox(emailAddress);
+		 registerPage.enterToPasswordTextbox("123456");
+		 registerPage.enterToConfirmPasswordTextbox("123456");
+		 
+		 registerPage.clickToRegisterButton();
+		 
+		 Assert.assertEquals(registerPage.getRegisterSuccessMessage(), "Your registration completed");
+
+		 registerPage.clickToHomePageLogo();
+		 homePage = new HomePageObject(driver);
+		 
+		 homePage.clickToLoginLink();
+		 loginPage = new LoginPageObject(driver);
+		 
+		 loginPage.enterToEmailTextbox(emailAddress);
+		 loginPage.enterToPasswordTextbox("123456");
+		 loginPage.clickToLoginButton();
+		 
+		 homePage = new HomePageObject(driver);
+		 homePage.clickToMyAccountLink();
+		 
+		 customerPage = new CustomerPageObject(driver);
+		 
+		 Assert.assertEquals(customerPage.getFirstNameAttributeValue(), "John");
+		 Assert.assertEquals(customerPage.getLastNameAttributeValue(), "Wick");
+		 Assert.assertEquals(customerPage.getEmailAttributeValue(), emailAddress);
 		 
 	 }
 	  
