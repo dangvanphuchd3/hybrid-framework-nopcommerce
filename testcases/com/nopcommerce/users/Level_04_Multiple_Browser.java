@@ -157,9 +157,4 @@ public class Level_04_Multiple_Browser extends BaseTest {
 		 driver.quit();
 	 }
 	 
-	 public String getEmailAddress() {
-		 String name = "johnwick";
-		 Random rad = new Random();
-		 return name + rad.nextInt(9999) + "@gmail.com";
-	 }
 }

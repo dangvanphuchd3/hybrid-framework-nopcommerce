@@ -14,6 +14,8 @@ public class BaseTest {
 	private String projectPath = System.getProperty("user.dir");
 	
 	protected WebDriver getBrowserDriver(String browserName) {
+		BrowserList browserList = BrowserList.valueOf(browserName.toUpperCase());
+		/* Dùng với if else
 		if (browserName.equalsIgnoreCase("Chrome")) {
 			 System.setProperty("webdriver.chrome.driver", projectPath + "\\browserDrivers\\chromedriver.exe");
 			 driver = new ChromeDriver();
@@ -29,18 +31,27 @@ public class BaseTest {
 		} else {
 			throw new RuntimeException("Browser name is not valid.");
 		}
+		*/
 		 
-		switch (browserName) {
-		case "Chrome":
+		switch (browserList) {
+		case CHROME:
 			 System.setProperty("webdriver.chrome.driver", projectPath + "\\browserDrivers\\chromedriver.exe");
 			 driver = new ChromeDriver();
 			 break;
-		case "Firefox":
+		case FIREFOX:
 			 System.setProperty("webdriver.gecko.driver", projectPath + "\\browserDrivers\\geckodriver.exe");
 			 driver = new FirefoxDriver();
 			 break;
+		case EDGE:
+			 System.setProperty("webdriver.edge.driver", projectPath + "\\browserDrivers\\msedgedriver.exe");
+			 driver = new FirefoxDriver();
+			 break;
+		case OPERA:
+			 System.setProperty("webdriver.opera.driver", projectPath + "\\browserDrivers\\operadriver.exe");
+			 driver = new FirefoxDriver();
+			 break;
 		default:
-			break;
+			throw new RuntimeException("Browser name is not valid.");
 		}
 		
 		 driver.get("https://demo.nopcommerce.com/");
