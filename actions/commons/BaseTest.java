@@ -49,17 +49,20 @@ public class BaseTest {
 			driver = WebDriverManager.chromedriver().create();
 			break;
 		case FIREFOX:
-			 System.setProperty("webdriver.gecko.driver", projectPath + "\\browserDrivers\\geckodriver.exe");
-			 driver = new FirefoxDriver();
-			 break;
+			 // System.setProperty("webdriver.gecko.driver", projectPath + "\\browserDrivers\\geckodriver.exe");
+			 // driver = new FirefoxDriver();
+			driver = WebDriverManager.firefoxdriver().create();
+			break;
 		case EDGE:
-			 System.setProperty("webdriver.edge.driver", projectPath + "\\browserDrivers\\msedgedriver.exe");
-			 driver = new FirefoxDriver();
-			 break;
+			 // System.setProperty("webdriver.edge.driver", projectPath + "\\browserDrivers\\msedgedriver.exe");
+			 // driver = new FirefoxDriver();
+			driver = WebDriverManager.edgedriver().create();
+			break;
 		case OPERA:
-			 System.setProperty("webdriver.opera.driver", projectPath + "\\browserDrivers\\operadriver.exe");
-			 driver = new FirefoxDriver();
-			 break;
+			 // System.setProperty("webdriver.opera.driver", projectPath + "\\browserDrivers\\operadriver.exe");
+			 // driver = new FirefoxDriver();
+			driver = WebDriverManager.operadriver().create();
+			break;
 		default:
 			throw new RuntimeException("Browser name is not valid.");
 		}
