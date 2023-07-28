@@ -9,6 +9,8 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.opera.OperaDriver;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
+
 public class BaseTest {
 	private WebDriver driver;
 	private String projectPath = System.getProperty("user.dir");
@@ -35,9 +37,17 @@ public class BaseTest {
 		 
 		switch (browserList) {
 		case CHROME:
-			 System.setProperty("webdriver.chrome.driver", projectPath + "\\browserDrivers\\chromedriver.exe");
-			 driver = new ChromeDriver();
-			 break;
+			 // System.setProperty("webdriver.chrome.driver", projectPath + "\\browserDrivers\\chromedriver.exe");
+			 // driver = new ChromeDriver();
+			
+			// 4.x
+			// WebDriverManager.chromedriver().setup();
+			// driver = new ChromeDriver();
+			
+			// 5.x
+			// Tự tải chromedriver tương ứng với Chrome browser + khởi tạo driver lên
+			driver = WebDriverManager.chromedriver().create();
+			break;
 		case FIREFOX:
 			 System.setProperty("webdriver.gecko.driver", projectPath + "\\browserDrivers\\geckodriver.exe");
 			 driver = new FirefoxDriver();
