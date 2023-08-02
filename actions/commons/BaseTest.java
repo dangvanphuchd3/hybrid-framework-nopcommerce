@@ -1,5 +1,6 @@
 package commons;
 
+import java.time.Duration;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
@@ -7,9 +8,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.opera.OperaDriver;
+// import org.openqa.selenium.opera.OperaDriver;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
+// import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class BaseTest {
 	private WebDriver driver;
@@ -46,22 +47,20 @@ public class BaseTest {
 			
 			// 5.x
 			// Tự tải chromedriver tương ứng với Chrome browser + khởi tạo driver lên
-			driver = WebDriverManager.chromedriver().create();
+			// driver = WebDriverManager.chromedriver().create();
+			driver = new ChromeDriver();
 			break;
 		case FIREFOX:
 			 // System.setProperty("webdriver.gecko.driver", projectPath + "\\browserDrivers\\geckodriver.exe");
 			 // driver = new FirefoxDriver();
-			driver = WebDriverManager.firefoxdriver().create();
+			// driver = WebDriverManager.firefoxdriver().create();
+			driver = new FirefoxDriver();
 			break;
 		case EDGE:
 			 // System.setProperty("webdriver.edge.driver", projectPath + "\\browserDrivers\\msedgedriver.exe");
 			 // driver = new FirefoxDriver();
-			driver = WebDriverManager.edgedriver().create();
-			break;
-		case OPERA:
-			 // System.setProperty("webdriver.opera.driver", projectPath + "\\browserDrivers\\operadriver.exe");
-			 // driver = new FirefoxDriver();
-			driver = WebDriverManager.operadriver().create();
+			// driver = WebDriverManager.edgedriver().create();
+			driver = new EdgeDriver();
 			break;
 		default:
 			throw new RuntimeException("Browser name is not valid.");
@@ -69,7 +68,8 @@ public class BaseTest {
 		
 		 driver.get("https://demo.nopcommerce.com/");
 		 driver.manage().window().maximize();
-		 driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+		 // driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+		 driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
 		 return driver;
 	}
 	

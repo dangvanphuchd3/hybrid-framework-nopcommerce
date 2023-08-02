@@ -2,9 +2,11 @@ package carWithoutFactory;
 
 public class Toyota {
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+	public void viewCar() {
+		System.out.println("Viewing Toyota Car");
 	}
-
+	
+	public void driveCar() {
+		System.out.println("Driving Toyota Car");
+	}
 }

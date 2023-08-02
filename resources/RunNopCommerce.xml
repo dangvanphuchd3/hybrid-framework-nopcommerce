@@ -23,11 +23,4 @@
     </classes>
   </test>
   
-  <test name="Run on Opera">
-  <parameter name="browser" value="Opera" />
-    <classes>
-      <class name="com.nopcommerce.users.Level_04_Multiple_Browser"/>
-    </classes>
-  </test>
-  
 </suite>
