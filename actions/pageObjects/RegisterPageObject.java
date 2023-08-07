@@ -42,9 +42,10 @@ public class RegisterPageObject extends BasePage {
 		return getElementText(driver, RegisterPageUI.CONFIRM_PASSWORD_ERROR_MESSAGE);
 	}
 
-	public void clickToHomePageLogo() {
+	public HomePageObject clickToHomePageLogo() {
 		waitForElementClickable(driver, RegisterPageUI.HOME_PAGE_LOGO_IMAGE);
 		clickToElement(driver, RegisterPageUI.HOME_PAGE_LOGO_IMAGE);
+		return new HomePageObject(driver);
 	}
 
 	public void enterToFirstNameTextbox(String firtName) {
