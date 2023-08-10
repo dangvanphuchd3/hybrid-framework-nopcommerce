@@ -84,6 +84,7 @@ public class Level_07_Switch_Multiple_Page extends BaseTest {
 		 
 		 // Addresses => Downloadable products
 		 downloadableProductPage = addressesPage.openDownloadableProduct();
+		 
 	 }
 	  
 	 @AfterClass

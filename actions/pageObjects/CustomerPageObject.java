@@ -3,6 +3,8 @@ package pageObjects;
 import org.openqa.selenium.WebDriver;
 
 import commons.BasePage;
+import commons.PageGeneratorManager;
+import pageUIs.AddressesPageUI;
 import pageUIs.CustomerPageUI;
 
 public class CustomerPageObject extends BasePage {
@@ -28,7 +30,14 @@ public class CustomerPageObject extends BasePage {
 	}
 
 	public DownloadableProductPageObject openDownloadableProductPage() {
-		// TODO Auto-generated method stub
-		return null;
+		waitForElementClickable(driver, CustomerPageUI.DOWNLOADABLE_PRODUCT_LINK);
+		clickToElement(driver, CustomerPageUI.DOWNLOADABLE_PRODUCT_LINK);
+		return PageGeneratorManager.getDownloadableProductPage(driver);
+	}
+
+	public AddressesPageObject openAddressesPage() {
+		waitForElementClickable(driver, CustomerPageUI.ADDRESSES_PAGE_LINK);
+		clickToElement(driver, CustomerPageUI.ADDRESSES_PAGE_LINK);
+		return PageGeneratorManager.getAddressesPage(driver);
 	}
 }
