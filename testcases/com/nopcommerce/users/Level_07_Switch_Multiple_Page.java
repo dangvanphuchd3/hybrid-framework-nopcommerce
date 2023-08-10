@@ -9,19 +9,24 @@ import org.testng.annotations.Test;
 
 import commons.BaseTest;
 import commons.PageGeneratorManager;
+import pageObjects.AddressesPageObject;
 import pageObjects.CustomerPageObject;
+import pageObjects.DownloadableProductPageObject;
 import pageObjects.HomePageObject;
 import pageObjects.LoginPageObject;
 import pageObjects.RegisterPageObject;
+import pageObjects.RewardPointPageObject;
 
 public class Level_07_Switch_Multiple_Page extends BaseTest {
-	 WebDriver driver;
-	 String emailAddress = getEmailAddress();
-	 HomePageObject homePage;
-	 RegisterPageObject registerPage;
-	 LoginPageObject loginPage;
-	 CustomerPageObject customerPage;
-	 
+	 private WebDriver driver;
+	 private String emailAddress = getEmailAddress();
+	 private HomePageObject homePage;
+	 private RegisterPageObject registerPage;
+	 private LoginPageObject loginPage;
+	 private CustomerPageObject customerPage;
+	 private DownloadableProductPageObject downloadableProductPage;
+	 private RewardPointPageObject rewardPointPage;
+	 private AddressesPageObject addressesPage;
 	 @Parameters("browser")
 	 @BeforeClass
 	 public void beforeClass(String browserName) {
@@ -31,9 +36,7 @@ public class Level_07_Switch_Multiple_Page extends BaseTest {
 	 }
 	  
 	 @Test
-	 public void Register_05_Success() {
-		 homePage = registerPage.clickToHomePageLogo();
-		 
+	 public void User_01_Register() {
 		 registerPage = homePage.clickToRegisterLink();
 		 
 		 registerPage.enterToFirstNameTextbox("John");
@@ -50,16 +53,37 @@ public class Level_07_Switch_Multiple_Page extends BaseTest {
 		 
 		 loginPage = homePage.clickToLoginLink();
 		 
-		 loginPage.enterToEmailTextbox(emailAddress);
-		 loginPage.enterToPasswordTextbox("123456");
-		 homePage = loginPage.clickToLoginButton();
-		
+		 homePage = loginPage.loginAsUser(emailAddress, "123456");
+		 
 		 customerPage = homePage.clickToMyAccountLink();
 		 
 		 Assert.assertEquals(customerPage.getFirstNameAttributeValue(), "John");
 		 Assert.assertEquals(customerPage.getLastNameAttributeValue(), "Wick");
 		 Assert.assertEquals(customerPage.getEmailAttributeValue(), emailAddress);
+	 }
+	 
+	 @Test
+	 public void User_02_Switch_Multiple_Page() {
+		 // Customer Infor => Downloadable products
+		 downloadableProductPage = customerPage.openDownloadableProductPage();
+		 // ...
 		 
+		 // Downloadable products => Addresses
+		 addressesPage = downloadableProductPage.openAddressPage();
+		 // ...
+		 
+		 // Addresses => Reward points
+		 rewardPointPage = addressesPage.openRewardPointPage();
+		 // ...
+		 
+		 // Reward points => Customer Infor
+		 customerPage = rewardPointPage.openCustomerInforPage();
+		 
+		 // Customer Infor => Addresses
+		 addressesPage = customerPage.openAddressesPage();
+		 
+		 // Addresses => Downloadable products
+		 downloadableProductPage = addressesPage.openDownloadableProduct();
 	 }
 	  
 	 @AfterClass

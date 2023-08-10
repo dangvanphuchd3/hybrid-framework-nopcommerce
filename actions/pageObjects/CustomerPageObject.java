@@ -26,4 +26,9 @@ public class CustomerPageObject extends BasePage {
 		waitForElementVisible(driver, CustomerPageUI.EMAIL_TEXTBOX);
 		return getElementAttribute(driver, CustomerPageUI.EMAIL_TEXTBOX, "value");
 	}
+
+	public DownloadableProductPageObject openDownloadableProductPage() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }
