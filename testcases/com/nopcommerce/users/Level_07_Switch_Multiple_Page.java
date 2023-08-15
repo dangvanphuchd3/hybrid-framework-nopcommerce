@@ -65,25 +65,25 @@ public class Level_07_Switch_Multiple_Page extends BaseTest {
 	 @Test
 	 public void User_02_Switch_Multiple_Page() {
 		 // Customer Infor => Downloadable products
-		 downloadableProductPage = customerPage.openDownloadableProductPage();
+		 downloadableProductPage = customerPage.openDownloadableProductPage(driver);
 		 // ...
 		 
 		 // Downloadable products => Addresses
-		 addressesPage = downloadableProductPage.openAddressPage();
+		 addressesPage = downloadableProductPage.openAddressesPage(driver);
 		 // ...
 		 
 		 // Addresses => Reward points
-		 rewardPointPage = addressesPage.openRewardPointPage();
+		 rewardPointPage = addressesPage.openRewardPointPage(driver);
 		 // ...
 		 
 		 // Reward points => Customer Infor
-		 customerPage = rewardPointPage.openCustomerInforPage();
+		 customerPage = rewardPointPage.openCustomerInforPage(driver);
 		 
 		 // Customer Infor => Addresses
-		 addressesPage = customerPage.openAddressesPage();
+		 addressesPage = customerPage.openAddressesPage(driver);
 		 
 		 // Addresses => Downloadable products
-		 downloadableProductPage = addressesPage.openDownloadableProduct();
+		 downloadableProductPage = addressesPage.openDownloadableProductPage(driver);
 		 
 	 }
 	  
