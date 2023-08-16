@@ -20,9 +20,13 @@ import pageObjects.RewardPointPageObject;
 public class Level_07_Switch_Multiple_Page extends BaseTest {
 	 private WebDriver driver;
 	 private String emailAddress = getEmailAddress();
+	 
+	 // Không thuộc SideBar sẽ không được gọi
 	 private HomePageObject homePage;
 	 private RegisterPageObject registerPage;
 	 private LoginPageObject loginPage;
+	 
+	 // Thuộc SideBar sẽ gọi các hàm trong SideBar dùng được
 	 private CustomerPageObject customerPage;
 	 private DownloadableProductPageObject downloadableProductPage;
 	 private RewardPointPageObject rewardPointPage;
@@ -65,25 +69,26 @@ public class Level_07_Switch_Multiple_Page extends BaseTest {
 	 @Test
 	 public void User_02_Switch_Multiple_Page() {
 		 // Customer Infor => Downloadable products
-		 downloadableProductPage = customerPage.openDownloadableProductPage(driver);
+		 downloadableProductPage = customerPage.openDownloadableProductPage();
 		 // ...
 		 
 		 // Downloadable products => Addresses
-		 addressesPage = downloadableProductPage.openAddressesPage(driver);
+		 addressesPage = downloadableProductPage.openAddressesPage();
 		 // ...
 		 
 		 // Addresses => Reward points
-		 rewardPointPage = addressesPage.openRewardPointPage(driver);
+		 rewardPointPage = addressesPage.openRewardPointPage();
 		 // ...
 		 
 		 // Reward points => Customer Infor
-		 customerPage = rewardPointPage.openCustomerInforPage(driver);
+		 customerPage = rewardPointPage.openCustomerInforPage();
 		 
 		 // Customer Infor => Addresses
-		 addressesPage = customerPage.openAddressesPage(driver);
+		 addressesPage = customerPage.openAddressesPage();
 		 
 		 // Addresses => Downloadable products
-		 downloadableProductPage = addressesPage.openDownloadableProductPage(driver);
+		 downloadableProductPage = addressesPage.openDownloadableProductPage();
+		 
 		 
 	 }
 	  
