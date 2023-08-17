@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <suite parallel="false" name="NopCommerce UI Automation">
-<parameter name="url" value="https://demo.nopcommerce.com/" />
+
+  <parameter name="userUrl" value="https://demo.nopcommerce.com/" />
+  <parameter name="adminUrl" value="https://admin-demo.nopcommerce.com/" />
   
   <test name="Run on Firefox">
   <parameter name="browser" value="Firefox" />

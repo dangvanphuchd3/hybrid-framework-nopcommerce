@@ -15,7 +15,7 @@ public class BaseTest {
 	private WebDriver driver;
 	private String projectPath = System.getProperty("user.dir");
 	
-	protected WebDriver getBrowserDriver(String browserName) {
+	protected WebDriver getBrowserDriver(String browserName, String url) {
 		BrowserList browserList = BrowserList.valueOf(browserName.toUpperCase());
 		/* Dùng với if else
 		if (browserName.equalsIgnoreCase("Chrome")) {
@@ -65,7 +65,7 @@ public class BaseTest {
 			throw new RuntimeException("Browser name is not valid.");
 		}
 		
-		 driver.get("https://demo.nopcommerce.com/");
+		 driver.get(url);
 		 driver.manage().window().maximize();
 		 // driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 		 driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));

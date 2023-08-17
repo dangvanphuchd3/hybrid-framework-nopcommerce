@@ -16,6 +16,9 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import pageObjects.HomePageObject;
+import pageUIs.BasePageUI;
+
 public class BasePage {
 	
 	public static BasePage getBasePage() {
@@ -316,6 +319,12 @@ public class BasePage {
 	
 	public void waitForElementInvisible(WebDriver driver, String xpathExpression) {
 		new WebDriverWait(driver, Duration.ofSeconds(15)).until(ExpectedConditions.invisibilityOfElementLocated(getByXpath(xpathExpression)));
+	}
+	
+	public HomePageObject clickToLogoutLink(WebDriver driver) {
+		waitForElementClickable(driver, BasePageUI.LOGOUT_LINK);
+		clickToElement(driver, BasePageUI.LOGOUT_LINK);
+		return PageGeneratorManager.getHomePage(driver);
 	}
 
 } 
