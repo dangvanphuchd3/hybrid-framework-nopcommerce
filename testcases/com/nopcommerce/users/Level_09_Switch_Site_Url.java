@@ -83,23 +83,29 @@ public class Level_09_Switch_Site_Url extends BaseTest {
 		 // ...
 		 
 		 // Logout ra (từ trang User)
-		 homePage = customerPage.clickToLogoutLink(driver);
+		 homePage = customerPage.userAbleToLogout(driver);
 		 
 		 // Qua trang Admin
 		 homePage.openUrl(driver, adminUrl);
 		 adminLoginPage = PageGeneratorManager.getAdminLoginPage(driver);
 		 
 		 // Login vào thành công
-		 adminDashboardPage = adminLoginPage.loginAsAdmin("", "");
+		 adminDashboardPage = adminLoginPage.loginAsAdmin("admin@yourstore.com", "admin");
+		 Assert.assertTrue(adminDashboardPage.isPageLoadedSuccess(driver));
 		 
 		 // ...
 		 
 		 // Logout ra (từ trang Admin)
+		 adminLoginPage = adminDashboardPage.adminAbleToLogout(driver);
 		 
 		 // Qua trang User
+		 adminLoginPage.openUrl(driver, userUrl);
+		 homePage = PageGeneratorManager.getHomePage(driver);
 		 
 		 // Login vào
+		 loginPage = homePage.clickToLoginLink();
 		 
+		 homePage = loginPage.loginAsUser(emailAddress, "123456");
 		 // ...
 		 
 	 }
