@@ -73,7 +73,7 @@ public class BasePage {
 	
 	public Alert waitForAlertPresence(WebDriver driver) {
 		// return new WebDriverWait(driver, 30).until(ExpectedConditions.alertIsPresent());
-		return new WebDriverWait(driver, Duration.ofSeconds(30)).until(ExpectedConditions.alertIsPresent());
+		return new WebDriverWait(driver, Duration.ofSeconds(longTimeout)).until(ExpectedConditions.alertIsPresent());
 	}
 	
 	public void switchToWindowByID (WebDriver driver, String otherID) {
@@ -181,7 +181,7 @@ public class BasePage {
 	public void selectItemInDropdown(WebDriver driver, String xpathParent, String xpathChild, String expectedText) {
 		driver.findElement(By.cssSelector(xpathParent)).click();
 		
-		List<WebElement> allItems = new WebDriverWait(driver, Duration.ofSeconds(30))
+		List<WebElement> allItems = new WebDriverWait(driver, Duration.ofSeconds(longTimeout))
 				.until(ExpectedConditions.presenceOfAllElementsLocatedBy(getByLocator(xpathChild)));
 		
 		for (WebElement tempElement : allItems) {	
@@ -348,19 +348,19 @@ public class BasePage {
 	}
 	
 	public void waitForElementVisible(WebDriver driver, String xpathExpression) {
-		new WebDriverWait(driver, Duration.ofSeconds(15)).until(ExpectedConditions.visibilityOfElementLocated(getByLocator(xpathExpression)));
+		new WebDriverWait(driver, Duration.ofSeconds(longTimeout)).until(ExpectedConditions.visibilityOfElementLocated(getByLocator(xpathExpression)));
 	}
 	
 	public void waitForListElementVisible(WebDriver driver, String xpathExpression) {
-		new WebDriverWait(driver, Duration.ofSeconds(15)).until(ExpectedConditions.visibilityOfAllElementsLocatedBy(getByLocator(xpathExpression)));
+		new WebDriverWait(driver, Duration.ofSeconds(longTimeout)).until(ExpectedConditions.visibilityOfAllElementsLocatedBy(getByLocator(xpathExpression)));
 	}
 	
 	public void waitForElementClickable(WebDriver driver, String xpathExpression) {
-		new WebDriverWait(driver, Duration.ofSeconds(15)).until(ExpectedConditions.elementToBeClickable(getByLocator(xpathExpression)));
+		new WebDriverWait(driver, Duration.ofSeconds(longTimeout)).until(ExpectedConditions.elementToBeClickable(getByLocator(xpathExpression)));
 	}
 	
 	public void waitForElementInvisible(WebDriver driver, String xpathExpression) {
-		new WebDriverWait(driver, Duration.ofSeconds(15)).until(ExpectedConditions.invisibilityOfElementLocated(getByLocator(xpathExpression)));
+		new WebDriverWait(driver, Duration.ofSeconds(longTimeout)).until(ExpectedConditions.invisibilityOfElementLocated(getByLocator(xpathExpression)));
 	}
 	
 	public HomePageObject userAbleToLogout(WebDriver driver) {
@@ -374,5 +374,7 @@ public class BasePage {
 		clickToElement(driver, BasePageUI.ADMIN_LOGOUT_LINK);
 		return PageGeneratorManager.getAdminLoginPage(driver);
 	}
+	
+	private long longTimeout = GlobalConstants.LONG_TIMEOUT;
 
 } 
