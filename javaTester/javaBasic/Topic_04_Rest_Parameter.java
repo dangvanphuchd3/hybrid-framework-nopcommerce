@@ -63,4 +63,11 @@ public class Topic_04_Rest_Parameter {
 		locatorValue = String.format(locatorValue, femals, country, males, total);
 		System.out.println("Click to: " + locatorValue);
 	}
+	
+	// Var Arguments = Rest Parameter
+	// Hàm click vào 1 element không cố định (dynamic) vs bất kỳ tham số nào (1-n tham số)
+	public void clickToElement (String locatorValue, String... values) {
+		locatorValue = String.format(locatorValue, (Object[]) values);
+		System.out.println("Click to: " + locatorValue);
+	}
 }
