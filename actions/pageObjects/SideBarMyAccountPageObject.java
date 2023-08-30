@@ -55,4 +55,9 @@ public class SideBarMyAccountPageObject extends BasePage{
 			return null;
 		}
 	}
+	
+	public void openDynamicSideBarPageByName (String pageName) {
+		waitForElementClickable(driver, SidebarMyAccountPageUI.DYNAMIC_SIDEBAR_LINK_TEXT, pageName);
+		clickToElement(driver, SidebarMyAccountPageUI.DYNAMIC_SIDEBAR_LINK_TEXT, pageName);
+	}
 }

@@ -77,37 +77,31 @@ public class Level_11_Dynamic_Locator_Rest_Param extends BaseTest {
 	 }
 	 
 	 @Test
-	 public void User_02_Switch_Multiple_Page() {
-		 // Customer Page
+	 public void User_02_Page_Navigation() {
+		 // Đều nằm trong SideBar
 		 
-		 // ...
+		 // Customer Page -> Address Page
+		 addressesPage = (AddressesPageObject) customerPage.openDynamicSideBarPage("Addresses");
 		 
-		 // Logout ra (từ trang User)
-		 homePage = customerPage.userAbleToLogout(driver);
+		 // Address Page -> Order Page
+		 orderPage = addressesPage.openOrderPage();
 		 
-		 // Qua trang Admin
-		 homePage.openUrl(driver, adminUrl);
-		 adminLoginPage = PageGeneratorManager.getAdminLoginPage(driver);
+		 // Order Page -> Customer Page
+		 customerPage = orderPage.openDynamicSideBarPage("Orders");
 		 
-		 // Login vào thành công
-		 adminDashboardPage = adminLoginPage.loginAsAdmin("admin@yourstore.com", "admin");
-		 Assert.assertTrue(adminDashboardPage.isPageLoadedSuccess(driver));
+		 // Customer Page -> Order Page
+		 orderPage = 
 		 
-		 // ...
+		 // Order Page -> Address Page
 		 
-		 // Logout ra (từ trang Admin)
-		 adminLoginPage = adminDashboardPage.adminAbleToLogout(driver);
+		 // Address Page -> Reward Point Page
+				 
+				 
+		 // Reward Point Page -> Customer Page
+		 customerPage = (CustomerPageObject) rewardPointPage.openDynamicSideBarPage("Customer infor");
 		 
-		 // Qua trang User
-		 adminLoginPage.openUrl(driver, userUrl);
-		 homePage = PageGeneratorManager.getHomePage(driver);
-		 
-		 // Login vào
-		 loginPage = homePage.clickToLoginLink();
-		 
-		 homePage = loginPage.loginAsUser(emailAddress, "123456");
-		 // ...
-		 
+		 // Customer Page -> Reward Point Page
+		 rewardPointPage = (RewardPointPageObject) customerPage.openDynamicSideBarPage("Reward points");
 	 }
 	  
 	 @AfterClass
