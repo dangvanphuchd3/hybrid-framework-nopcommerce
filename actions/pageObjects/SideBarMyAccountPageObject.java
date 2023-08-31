@@ -37,6 +37,12 @@ public class SideBarMyAccountPageObject extends BasePage{
 		return PageGeneratorManager.getCustomerPage(driver);
 	}
 	
+	public OrdersPageObject openOrdersPage() {
+		waitForElementClickable(driver, SidebarMyAccountPageUI.ORDER_LINK_TEXT);
+		clickToElement(driver, SidebarMyAccountPageUI.ORDER_LINK_TEXT);
+		return PageGeneratorManager.getOrdersPage(driver);
+	}
+	
 	public SideBarMyAccountPageObject openDynamicSideBarPage(String pageName) {
 		waitForElementClickable(driver, SidebarMyAccountPageUI.DYNAMIC_SIDEBAR_LINK_TEXT, pageName);
 		clickToElement(driver, SidebarMyAccountPageUI.DYNAMIC_SIDEBAR_LINK_TEXT, pageName);

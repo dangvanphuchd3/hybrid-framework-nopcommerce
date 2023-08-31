@@ -8,20 +8,22 @@ import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import commons.BaseTest;
+import commons.GlobalConstants;
 import commons.PageGeneratorManager;
 import pageObjects.AddressesPageObject;
 import pageObjects.CustomerPageObject;
 import pageObjects.DownloadableProductPageObject;
 import pageObjects.HomePageObject;
 import pageObjects.LoginPageObject;
+import pageObjects.OrdersPageObject;
 import pageObjects.RegisterPageObject;
 import pageObjects.RewardPointPageObject;
+import pageObjects.SideBarMyAccountPageObject;
 import pageObjects.admin.AdminDashboardPageObject;
 import pageObjects.admin.AdminLoginPageObject;
 
 public class Level_11_Dynamic_Locator_Rest_Param extends BaseTest {
 	 private WebDriver driver;
-	 private String emailAddress = getEmailAddress();
 	 
 	 // Không thuộc SideBar sẽ không được gọi
 	 private HomePageObject homePage;
@@ -33,20 +35,21 @@ public class Level_11_Dynamic_Locator_Rest_Param extends BaseTest {
 	 private DownloadableProductPageObject downloadableProductPage;
 	 private RewardPointPageObject rewardPointPage;
 	 private AddressesPageObject addressesPage;
+	 private OrdersPageObject ordersPage;
 	 
 	 private AdminLoginPageObject adminLoginPage;
 	 private AdminDashboardPageObject adminDashboardPage;
 	 
-	 private String userUrl, adminUrl;
+	 private String emailAddress = getEmailAddress();
 	 
-	 @Parameters({"browser", "userUrl", "adminUrl"})
+	 private String adminUrl = GlobalConstants.DEV_ADMIN_URL;
+	 private String userUrl = GlobalConstants.DEV_USER_URL;
+	 
+	 @Parameters({"browser"})
 	 @BeforeClass
-	 public void beforeClass(String browserName, String userUrl, String adminUrl) {
+	 public void beforeClass(String browserName) {
 		 driver = getBrowserDriver(browserName, userUrl);
 		 homePage = PageGeneratorManager.getHomePage(driver);
-		 
-		 this.userUrl = userUrl;
-		 this.adminUrl = adminUrl;
 	 }
 	  
 	 @Test
@@ -84,24 +87,41 @@ public class Level_11_Dynamic_Locator_Rest_Param extends BaseTest {
 		 addressesPage = (AddressesPageObject) customerPage.openDynamicSideBarPage("Addresses");
 		 
 		 // Address Page -> Order Page
-		 orderPage = addressesPage.openOrderPage();
+		 ordersPage = (OrdersPageObject) addressesPage.openDynamicSideBarPage("Orders");
+		 System.out.println(ordersPage);
 		 
 		 // Order Page -> Customer Page
-		 customerPage = orderPage.openDynamicSideBarPage("Orders");
+		 customerPage = (CustomerPageObject) ordersPage.openDynamicSideBarPage("Customer info");
 		 
 		 // Customer Page -> Order Page
-		 orderPage = 
+		 ordersPage = (OrdersPageObject) customerPage.openDynamicSideBarPage("Orders");
 		 
 		 // Order Page -> Address Page
+		 addressesPage = (AddressesPageObject) ordersPage.openDynamicSideBarPage("Addresses");
 		 
 		 // Address Page -> Reward Point Page
-				 
+		 rewardPointPage = (RewardPointPageObject) addressesPage.openDynamicSideBarPage("Reward points");		 
 				 
 		 // Reward Point Page -> Customer Page
 		 customerPage = (CustomerPageObject) rewardPointPage.openDynamicSideBarPage("Customer infor");
 		 
 		 // Customer Page -> Reward Point Page
 		 rewardPointPage = (RewardPointPageObject) customerPage.openDynamicSideBarPage("Reward points");
+	 }
+	 
+	 @Test
+	 public void User_03_Page_Navigation() {
+		 // Reward Point Page -> Customer Page
+		 rewardPointPage.openDynamicSideBarPageByName("Customer infor");
+		 customerPage = PageGeneratorManager.getCustomerPage(driver);
+		 
+		 // Customer Page -> Reward Point Page
+		 customerPage.openDynamicSideBarPage("Reward points");
+		 rewardPointPage = PageGeneratorManager.getRewardPointPage(driver);
+		 
+		 // Reward Point Page -> Order Page
+		 rewardPointPage.openDynamicSideBarPageByName("Orders");
+		 ordersPage = PageGeneratorManager.getOrdersPage(driver);
 	 }
 	  
 	 @AfterClass
