@@ -14,6 +14,7 @@ import pageObjects.CustomerPageObject;
 import pageObjects.DownloadableProductPageObject;
 import pageObjects.HomePageObject;
 import pageObjects.LoginPageObject;
+import pageObjects.OrdersPageObject;
 import pageObjects.RegisterPageObject;
 import pageObjects.RewardPointPageObject;
 
@@ -31,12 +32,19 @@ public class Level_08_Page_Navigation extends BaseTest {
 	 private DownloadableProductPageObject downloadableProductPage;
 	 private RewardPointPageObject rewardPointPage;
 	 private AddressesPageObject addressesPage;
-	 @Parameters("browser")
+	 private OrdersPageObject ordersPage;
+	 
+	 private String userUrl, adminUrl;
+	 
+	 @Parameters({"browser", "userUrl", "adminUrl"})
 	 @BeforeClass
-	 public void beforeClass(String browserName) {
-		 driver = getBrowserDriver(browserName);
+	 public void beforeClass(String browserName, String userUrl, String adminUrl) {
+		 driver = getBrowserDriver(browserName, userUrl);
 		 
 		 homePage = PageGeneratorManager.getHomePage(driver);
+		 
+		 this.userUrl = userUrl;
+		 this.adminUrl = adminUrl;
 	 }
 	  
 	 @Test
@@ -88,6 +96,9 @@ public class Level_08_Page_Navigation extends BaseTest {
 		 
 		 // Addresses => Downloadable products
 		 downloadableProductPage = addressesPage.openDownloadableProductPage();
+		 
+		 // Downloadable products => Orders Page
+		 ordersPage = downloadableProductPage.openOrdersPage();
 		 
 		 
 	 }

@@ -88,13 +88,12 @@ public class Level_11_Dynamic_Locator_Rest_Param extends BaseTest {
 		 
 		 // Address Page -> Order Page
 		 ordersPage = (OrdersPageObject) addressesPage.openDynamicSideBarPage("Orders");
-		 System.out.println(ordersPage);
 		 
 		 // Order Page -> Customer Page
 		 customerPage = (CustomerPageObject) ordersPage.openDynamicSideBarPage("Customer info");
 		 
 		 // Customer Page -> Order Page
-		 ordersPage = (OrdersPageObject) customerPage.openDynamicSideBarPage("Orders");
+		 // ordersPage = (OrdersPageObject) customerPage.openDynamicSideBarPage("Orders");
 		 
 		 // Order Page -> Address Page
 		 addressesPage = (AddressesPageObject) ordersPage.openDynamicSideBarPage("Addresses");

@@ -31,12 +31,18 @@ public class Level_07_Switch_Multiple_Page extends BaseTest {
 	 private DownloadableProductPageObject downloadableProductPage;
 	 private RewardPointPageObject rewardPointPage;
 	 private AddressesPageObject addressesPage;
-	 @Parameters("browser")
+	 
+	 private String userUrl, adminUrl;
+	 
+	 @Parameters({"browser", "userUrl", "adminUrl"})
 	 @BeforeClass
-	 public void beforeClass(String browserName) {
-		 driver = getBrowserDriver(browserName);
+	 public void beforeClass(String browserName, String userUrl, String adminUrl) {
+		 driver = getBrowserDriver(browserName, userUrl);
 		 
 		 homePage = PageGeneratorManager.getHomePage(driver);
+		 
+		 this.userUrl = userUrl;
+		 this.adminUrl = adminUrl;
 	 }
 	  
 	 @Test

@@ -50,10 +50,10 @@ public class SideBarMyAccountPageObject extends BasePage{
 		switch (pageName) {
 		case "Customer infor":
 			return PageGeneratorManager.getCustomerPage(driver);
-		case "Address":
+		case "Addresses":
 			return PageGeneratorManager.getAddressesPage(driver);
 		case "Orders":
-			return PageGeneratorManager.getCustomerPage(driver);
+			return PageGeneratorManager.getOrdersPage(driver);
 		case "Reward points":
 			return PageGeneratorManager.getRewardPointPage(driver);
 		default:

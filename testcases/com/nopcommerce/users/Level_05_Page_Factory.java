@@ -22,10 +22,15 @@ public class Level_05_Page_Factory extends BaseTest {
 	 LoginPageObject loginPage;
 	 CustomerPageObject customerPage;
 	 
-	 @Parameters("browser")
+	 private String userUrl, adminUrl;
+	 
+	 @Parameters({"browser", "userUrl", "adminUrl"})
 	 @BeforeClass
-	 public void beforeClass(String browserName) {
-		 driver = getBrowserDriver(browserName);
+	 public void beforeClass(String browserName, String userUrl, String adminUrl) {
+		 driver = getBrowserDriver(browserName, userUrl);
+		 
+		 this.userUrl = userUrl;
+		 this.adminUrl = adminUrl;
 	 }
 	  
 	 @Test
