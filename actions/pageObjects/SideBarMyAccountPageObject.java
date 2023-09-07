@@ -48,7 +48,7 @@ public class SideBarMyAccountPageObject extends BasePage{
 		clickToElement(driver, SidebarMyAccountPageUI.DYNAMIC_SIDEBAR_LINK_TEXT, pageName);
 		
 		switch (pageName) {
-		case "Customer infor":
+		case "Customer info":
 			return PageGeneratorManager.getCustomerPage(driver);
 		case "Addresses":
 			return PageGeneratorManager.getAddressesPage(driver);

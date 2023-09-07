@@ -93,7 +93,7 @@ public class Level_11_Dynamic_Locator_Rest_Param extends BaseTest {
 		 customerPage = (CustomerPageObject) ordersPage.openDynamicSideBarPage("Customer info");
 		 
 		 // Customer Page -> Order Page
-		 // ordersPage = (OrdersPageObject) customerPage.openDynamicSideBarPage("Orders");
+		 ordersPage = (OrdersPageObject) customerPage.openDynamicSideBarPage("Orders");
 		 
 		 // Order Page -> Address Page
 		 addressesPage = (AddressesPageObject) ordersPage.openDynamicSideBarPage("Addresses");
@@ -102,7 +102,7 @@ public class Level_11_Dynamic_Locator_Rest_Param extends BaseTest {
 		 rewardPointPage = (RewardPointPageObject) addressesPage.openDynamicSideBarPage("Reward points");		 
 				 
 		 // Reward Point Page -> Customer Page
-		 customerPage = (CustomerPageObject) rewardPointPage.openDynamicSideBarPage("Customer infor");
+		 customerPage = (CustomerPageObject) rewardPointPage.openDynamicSideBarPage("Customer info");
 		 
 		 // Customer Page -> Reward Point Page
 		 rewardPointPage = (RewardPointPageObject) customerPage.openDynamicSideBarPage("Reward points");
@@ -111,7 +111,7 @@ public class Level_11_Dynamic_Locator_Rest_Param extends BaseTest {
 	 @Test
 	 public void User_03_Page_Navigation() {
 		 // Reward Point Page -> Customer Page
-		 rewardPointPage.openDynamicSideBarPageByName("Customer infor");
+		 rewardPointPage.openDynamicSideBarPageByName("Customer info");
 		 customerPage = PageGeneratorManager.getCustomerPage(driver);
 		 
 		 // Customer Page -> Reward Point Page
