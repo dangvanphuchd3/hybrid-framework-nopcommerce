@@ -72,9 +72,36 @@ public class BaseTest {
 		 return driver;
 	}
 	
+	protected WebDriver getBrowserDriver(String browserName) {
+		BrowserList browserList = BrowserList.valueOf(browserName.toUpperCase());
+		
+		switch (browserList) {
+		case CHROME:
+			driver = new ChromeDriver();
+			break;
+		case FIREFOX:
+			driver = new FirefoxDriver();
+			break;
+		case EDGE:
+			driver = new EdgeDriver();
+			break;
+		default:
+			throw new RuntimeException("Browser name is not valid.");
+		}
+		
+		 driver.get("https://www.jqueryscript.net/demo/CRUD-Data-Grid-Plugin-jQuery-Quickgrid/");
+		 driver.manage().window().maximize();
+		 driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(GlobalConstants.LONG_TIMEOUT));
+		 return driver;
+	}
+	
 	protected String getEmailAddress() {
 		 String name = "johnwick";
 		 Random rad = new Random();
 		 return name + rad.nextInt(9999) + "@gmail.com";
+	}
+	
+	protected void closeBrowser() {
+		driver.quit();
 	}
 }
