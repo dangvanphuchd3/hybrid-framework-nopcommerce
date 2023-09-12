@@ -157,6 +157,10 @@ public class BasePage {
 		return driver.findElements(getByLocator(locator));
 	}
 	
+	public List<WebElement> getListElement(WebDriver driver, String locator, String... restParams) {
+		return driver.findElements(getByLocator(getDynamicLocator(locator, restParams)));
+	}
+	
 	public void clickToElement(WebDriver driver, String locator) {
 		getElement(driver, locator).click();
 	}
@@ -230,8 +234,12 @@ public class BasePage {
 		return Color.fromString(rgbaColor).asHex().toUpperCase();
 	}
 	
-	public int getListElementSize(WebDriver driver, String xpathExpression) {
-		return getListElement(driver, xpathExpression).size();
+	public int getListElementSize(WebDriver driver, String locator) {
+		return getListElement(driver, locator).size();
+	}
+	
+	public int getListElementSize(WebDriver driver, String locator, String... restParams) {
+		return getListElement(driver, getDynamicLocator(locator, restParams)).size();
 	}
 	
 	public void checkToCheckboxRadio(WebDriver driver, String xpathExpression) {

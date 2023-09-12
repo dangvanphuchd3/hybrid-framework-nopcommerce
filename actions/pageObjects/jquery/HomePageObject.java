@@ -1,6 +1,10 @@
 package pageObjects.jquery;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
 import commons.BasePage;
 import pageUIs.jquery.HomePageUI;
@@ -35,5 +39,37 @@ public class HomePageObject extends BasePage {
 	public void clickToRowActionByCountryName(String country, String rowAction) {
 		waitForElementClickable(driver, HomePageUI.ROW_ACTION_BY_COUNTRY_NAME, country, rowAction);
 		clickToElement(driver, HomePageUI.ROW_ACTION_BY_COUNTRY_NAME, country, rowAction);
+	}
+
+	public List<String> getAllPageValuesByColumnName(String columnName) {
+		
+		List<String> allValues = new ArrayList<String>();
+		
+		 // Bước 1: Lấy ra tất cả các page
+		 List<WebElement> allPageLinks = getListElement(driver, HomePageUI.ALL_PAGE_LINK);
+		 
+		 int columnIndex = getListElementSize(driver, HomePageUI.COLUMN_INDEX_BY_COLUMN_NAME, columnName) + 1;
+		 
+		 // Bước 2: Duyệt qua từng page
+		 for (WebElement pageLink : allPageLinks) {
+			pageLink.click();
+			sleepInSecond(1);
+			
+			// Bước 3: Lấy ra tất cả các giá trị cỉa 1 cột trong cái page đó -> Lưu nó vào List/ Set/...
+			List<WebElement> allRowValues = getListElement(driver, HomePageUI.ALL_VALUE_BY_COLUMN_INDEX, String.valueOf(columnIndex));
+			
+			for (WebElement rowValue : allRowValues) {
+				allValues.add(rowValue.getText());
+			}
+		}
+		
+		 // Sort ASC/ DESC
+		 
+		 // In ra hết tất cả các giá trị của 1 cột trong all page
+		 for (String value : allValues) {
+			System.out.println(value);
+		}
+		 
+		 return allValues;
 	}
 }
