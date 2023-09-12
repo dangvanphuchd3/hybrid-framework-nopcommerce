@@ -71,8 +71,31 @@ public class Level_13_Handle_DataTable extends BaseTest {
 		 
 	 }
 	 
+	 @Test
 	 public void TC_04_Icon_Button_Checkbox() {
 		 // Click vào bất kì 1 cái icon/ button/ checkbox/... của 1 row nào đó
+		 homePage.clickToRowActionByCountryName("Afghanistan", "remove");
+		 homePage.clickToRowActionByCountryName("AFRICA", "remove");
+		 homePage.clickToRowActionByCountryName("Albania", "remove");
+		 homePage.clickToRowActionByCountryName("Arab Rep of Egypt", "remove");
+		 homePage.clickToRowActionByCountryName("Aruba", "remove");
+		 homePage.refreshCurrentPage(driver);
+		 
+		 homePage.clickToRowActionByCountryName("Afghanistan", "edit");
+		 homePage.refreshCurrentPage(driver);
+		 
+		 homePage.clickToRowActionByCountryName("Arab Rep of Egypt", "edit");
+		 homePage.refreshCurrentPage(driver);
+	 }
+	 
+	 @Test
+	 public void TC_05_Action_By_Index() {
+		 
+	 }
+	 
+	 @Test
+	 public void TC_06_Get_All_Row_Values() {
+		 
 	 }
 	  
 	 @AfterClass
