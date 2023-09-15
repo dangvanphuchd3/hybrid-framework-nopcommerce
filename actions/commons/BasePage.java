@@ -397,6 +397,16 @@ public class BasePage {
 		return explicitWait.until(jQueryLoad) && explicitWait.until(jsLoad);
 	}
 	
+	public void uploadMultipleFiles(WebDriver driver, String... fileNames) {
+		String filePath = System.getProperty("user.dir") + "\\uploadFiles\\";
+		String fullFileName= "";
+		for(String file: fileNames) {
+			fullFileName = fullFileName + filePath + file + "\n";
+		}
+		fullFileName = fullFileName.trim();
+		getElement(driver, BasePageUI.UPLOAD_FILE_TYPE).sendKeys(fullFileName);
+	}
+	
 	public void waitForElementVisible(WebDriver driver, String locator) {
 		new WebDriverWait(driver, Duration.ofSeconds(longTimeout)).until(ExpectedConditions.visibilityOfElementLocated(getByLocator(locator)));
 	}
