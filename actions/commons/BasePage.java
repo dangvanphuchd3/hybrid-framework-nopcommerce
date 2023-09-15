@@ -152,6 +152,7 @@ public class BasePage {
 	public WebElement getElement(WebDriver driver, String locator) {
 		return driver.findElement(getByLocator(locator));
 	}
+
 	
 	public List<WebElement> getListElement(WebDriver driver, String locator) {
 		return driver.findElements(getByLocator(locator));
@@ -187,8 +188,12 @@ public class BasePage {
 		return getElement(driver, getDynamicLocator(locator, restParams)).getText();
 	}
 	
-	public void selectDropdown(WebDriver driver, String xpathExpression, String itemText) {
-		new Select(getElement(driver, xpathExpression)).selectByVisibleText(itemText);
+	public void selectDefaultDropdown(WebDriver driver, String locator, String itemText) {
+		new Select(getElement(driver, locator)).selectByVisibleText(itemText);
+	}
+	
+	public void selectDefaultDropdown(WebDriver driver, String locator, String valueToSelect, String... restParams) {
+		new Select(getElement(driver, getDynamicLocator(locator, restParams))).selectByVisibleText(valueToSelect);
 	}
 	
 	public String getFirstSelectedOptionText(WebDriver driver, String xpathExpression) {
@@ -242,15 +247,27 @@ public class BasePage {
 		return getListElement(driver, getDynamicLocator(locator, restParams)).size();
 	}
 	
-	public void checkToCheckboxRadio(WebDriver driver, String xpathExpression) {
-		if(!isElementSelected(driver, xpathExpression)) {
-			clickToElement(driver, xpathExpression);
+	public void checkToCheckbox(WebDriver driver, String locator) {
+		if(!isElementSelected(driver, locator)) {
+			clickToElement(driver, locator);
 		}
 	}
 	
-	public void uncheckToCheckbox(WebDriver driver, String xpathExpression) {
-		if(isElementSelected(driver, xpathExpression)) {
-			clickToElement(driver, xpathExpression);
+	public void checkToCheckbox(WebDriver driver, String locator, String... restParams) {
+		if(!isElementSelected(driver, getDynamicLocator(locator, restParams))) {
+			clickToElement(driver, getDynamicLocator(locator, restParams));
+		}
+	}
+	
+	public void uncheckToCheckbox(WebDriver driver, String locator) {
+		if(isElementSelected(driver, locator)) {
+			clickToElement(driver, locator);
+		}
+	}
+	
+	public void uncheckToCheckbox(WebDriver driver, String locator, String... restParams) {
+		if(isElementSelected(driver, getDynamicLocator(locator, restParams))) {
+			clickToElement(driver, getDynamicLocator(locator, restParams));
 		}
 	}
 	

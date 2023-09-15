@@ -97,7 +97,20 @@ public class Level_13_Handle_DataTable extends BaseTest {
 	 
 	 @Test
 	 public void TC_06_Action_By_Index() {
+		 homePage.openUrl(driver, "https://www.jqueryscript.net/demo/jQuery-Dynamic-Data-Grid-Plugin-appendGrid/");
 		 
+		 // Nhập vào textbox tại cột Contact Person dòng thứ 2
+		 homePage.enterToTextBoxByColumnNameAndRowIndex("Contact Person", "2", "Oliver Kahl");
+		 homePage.enterToTextBoxByColumnNameAndRowIndex("Company", "1", "Luvina Software");
+		 
+		 // Select dữ liệu tại cột Country dòng thứ 3
+		 homePage.selectDropdownByColunmNameAndRowIndex("Country", "3", "United Kingdom");
+		 homePage.selectDropdownByColunmNameAndRowIndex("Country", "1", "Japan");	 
+		 
+		 // Click vào checkbox tại cột NPO dòng thứ 1
+		 homePage.clickToCheckboxByColumnNameAndRowIndex("NPO?", "2");
+		 homePage.clickToCheckboxByColumnNameAndRowIndex("NPO?", "1");
+		 homePage.clickToCheckboxByColumnNameAndRowIndex("NPO?", "3");
 	 }
 	  
 	 @AfterClass
