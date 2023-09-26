@@ -398,8 +398,11 @@ public class BasePage {
 	}
 	
 	public void uploadMultipleFiles(WebDriver driver, String... fileNames) {
-		String filePath = System.getProperty("user.dir") + "\\uploadFiles\\";
+		String filePath = GlobalConstants.UPLOAD_PATH;
+		
 		String fullFileName= "";
+		
+		
 		for(String file: fileNames) {
 			fullFileName = fullFileName + filePath + file + "\n";
 		}
