@@ -15,7 +15,7 @@ public class AdminLoginPageObject extends BasePage{
 
 	public void inputToEmailTextbox(String emailAddress) {
 		waitForElementVisible(driver, AdminLoginPageUI.EMAIL_TEXTBOX);
-		sendKeyToElement(driver, AdminLoginPageUI.EMAIL_TEXTBOX, emailAddress);	
+		sendKeyToElement(driver, AdminLoginPageUI.EMAIL_TEXTBOX, emailAddress);
 	}
 
 	public void inputToPasswordTextbox(String password) {
@@ -27,7 +27,7 @@ public class AdminLoginPageObject extends BasePage{
 		waitForElementClickable(driver, AdminLoginPageUI.LOGIN_BUTTON);
 		clickToElement(driver, AdminLoginPageUI.LOGIN_BUTTON);
 	}
-	
+
 	public AdminDashboardPageObject loginAsAdmin(String emailAddress, String password) {
 		inputToEmailTextbox(emailAddress);
 		inputToPasswordTextbox(password);

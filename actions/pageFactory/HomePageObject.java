@@ -13,14 +13,14 @@ public class HomePageObject extends BasePageFactory {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
-	
+
 	@CacheLookup
 	@FindBy(xpath = "//a[@class='ico-register']")
 	WebElement registerLink;
-	
+
 	@FindBy(xpath = "//a[@class='ico-login']")
 	WebElement loginLink;
-	
+
 	@FindBy(xpath = "//a[@class='ico-account']")
 	WebElement myAccountLink;
 

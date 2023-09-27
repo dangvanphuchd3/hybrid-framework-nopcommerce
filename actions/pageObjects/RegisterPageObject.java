@@ -11,7 +11,7 @@ public class RegisterPageObject extends BasePage {
 	public RegisterPageObject(WebDriver driver) {
 		this.driver = driver;
 	}
-	
+
 	public void clickToRegisterButton() {
 		waitForElementClickable(driver, RegisterPageUI.REGISTER_BUTTON);
 		clickToElement(driver, RegisterPageUI.REGISTER_BUTTON);
@@ -51,7 +51,7 @@ public class RegisterPageObject extends BasePage {
 	public void enterToFirstNameTextbox(String firtName) {
 		waitForElementVisible(driver, RegisterPageUI.FIRST_NAME_TEXTBOX);
 		sendKeyToElement(driver, RegisterPageUI.FIRST_NAME_TEXTBOX, firtName);
-		
+
 	}
 
 	public void enterToLastNameTextbox(String lastName) {

@@ -6,12 +6,12 @@ import pageUIs.CustomerPageUI;
 
 public class CustomerPageObject extends SideBarMyAccountPageObject {
 	private WebDriver driver;
-	
+
 	public CustomerPageObject(WebDriver driver) {
 		super(driver);
 		this.driver = driver;
 	}
-	
+
 	public String getFirstNameAttributeValue() {
 		waitForElementVisible(driver, CustomerPageUI.FIRST_NAME_TEXTBOX);
 		return getElementAttribute(driver, CustomerPageUI.FIRST_NAME_TEXTBOX, "value");

@@ -10,7 +10,7 @@ public class Topic_03_Driver_Infor {
 
 	public static void main(String[] args) {
 		// GUID
-		
+
 		// Chrome
 		WebDriver driver = new ChromeDriver();
 		SessionId sessionId = ((RemoteWebDriver) driver).getSessionId();
@@ -19,7 +19,7 @@ public class Topic_03_Driver_Infor {
 		driver.quit();
 		// Session ID = 1aadf17ca804c7341f88178016da3b24
 		// Driver ID = ChromeDriver: chrome on windows (1aadf17ca804c7341f88178016da3b24)
-		
+
 		// Firefox
 		driver = new FirefoxDriver();
 		sessionId = ((RemoteWebDriver) driver).getSessionId();

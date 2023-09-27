@@ -31,5 +31,5 @@ public class UploadPageObject extends BasePage{
 	public boolean isFileUploadedSuccess(String fileName) {
 		waitForElementVisible(driver, UploadPageUI.FILE_UPLOADED_BY_NAME, fileName);
 		return isElementDisplayed(driver, UploadPageUI.FILE_UPLOADED_BY_NAME, fileName);
-	}	
+	}
 }

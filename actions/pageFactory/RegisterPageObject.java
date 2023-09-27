@@ -13,47 +13,47 @@ public class RegisterPageObject extends BasePageFactory {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
-	
+
 	@CacheLookup
 	@FindBy(css = "button#register-button")
 	WebElement registerButton;
-	
+
 	@FindBy(id = "FirstName-error")
 	WebElement firtNameErrorMsg;
-	
+
 	@FindBy(id = "LastName-error")
 	WebElement lastNameErrorMsg;
-	
+
 	@FindBy(id = "Email-error")
 	WebElement emailErrorMsg;
-	
+
 	@FindBy(id = "Password-error")
 	WebElement passwordErrorMsg;
-	
+
 	@FindBy(id = "ConfirmPassword-error")
 	WebElement confirmPasswordErrorMsg;
-	
+
 	@FindBy(css = "div.result")
 	WebElement registerSuccessMsg;
-	
+
 	@FindBy(id = "FirstName")
 	WebElement firstNameTextbox;
-	
+
 	@FindBy(id = "LastName")
 	WebElement lastNameTextbox;
-	
+
 	@FindBy(id = "Email")
 	WebElement emailTextbox;
-	
+
 	@FindBy(id = "Password")
 	WebElement passwordTextbox;
-	
+
 	@FindBy(id = "ConfirmPassword")
 	WebElement confirmPasswordTextbox;
-	
+
 	@FindBy(xpath = "//div[@class='header-logo']//img")
 	WebElement homePageLogo;
-	
+
 	public void clickToRegisterButton() {
 		waitForElementClickable(driver, registerButton);
 		clickToElement(driver, registerButton);
@@ -92,7 +92,7 @@ public class RegisterPageObject extends BasePageFactory {
 	public void enterToFirstNameTextbox(String firtName) {
 		waitForElementVisible(driver, firstNameTextbox);
 		sendKeyToElement(driver, firstNameTextbox, firtName);
-		
+
 	}
 
 	public void enterToLastNameTextbox(String lastName) {
