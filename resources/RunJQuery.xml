@@ -3,8 +3,8 @@
 
   <parameter name="url" value="https://blueimp.github.io/jQuery-File-Upload/" />
   
-  <test name="Run on Chrome">
-  <parameter name="browser" value="chrome" />
+  <test name="Run on Firefox">
+  <parameter name="browser" value="firefox" />
     <classes>
       <class name="com.jquery.upload.Level_14_Upload_File" />
     </classes>

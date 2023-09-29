@@ -438,8 +438,12 @@ public class BasePage {
 		new WebDriverWait(driver, Duration.ofSeconds(longTimeout)).until(ExpectedConditions.elementToBeClickable(getByLocator(getDynamicLocator(locator, restParams))));
 	}
 
-	public void waitForElementInvisible(WebDriver driver, String xpathExpression) {
-		new WebDriverWait(driver, Duration.ofSeconds(longTimeout)).until(ExpectedConditions.invisibilityOfElementLocated(getByLocator(xpathExpression)));
+	public boolean waitForElementInvisible(WebDriver driver, String xpathExpression) {
+		return new WebDriverWait(driver, Duration.ofSeconds(longTimeout)).until(ExpectedConditions.invisibilityOfElementLocated(getByLocator(xpathExpression)));
+	}
+	
+	public boolean waitForListElementInvisible(WebDriver driver, String locator) {
+		return new WebDriverWait(driver, Duration.ofSeconds(longTimeout)).until(ExpectedConditions.invisibilityOfAllElements(getListElement(driver, locator)));
 	}
 
 	public HomePageObject userAbleToLogout(WebDriver driver) {

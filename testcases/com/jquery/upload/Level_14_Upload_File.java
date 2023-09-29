@@ -17,6 +17,8 @@ public class Level_14_Upload_File extends BaseTest {
 	 String beach = "beach.jpg";
 	 String computer = "computer.jpg";
 	 String mountain = "mountain.jpg";
+	 
+	 String [] fileNames = {beach, computer, mountain};
 
 	 @Parameters({"browser", "url"})
 	 @BeforeClass
@@ -50,7 +52,47 @@ public class Level_14_Upload_File extends BaseTest {
 
 	 @Test
 	 public void TC_02_Upload_Multiple_File() {
+		 uploadPage.refreshCurrentPage(driver);
+		 
+		 uploadPage.uploadMultipleFiles(driver, fileNames);
+		 uploadPage.sleepInSecond(2);
+		 
+		 Assert.assertTrue(uploadPage.isFileLoadedSuccess(beach));
+		 Assert.assertTrue(uploadPage.isFileLoadedSuccess(computer));
+		 Assert.assertTrue(uploadPage.isFileLoadedSuccess(mountain));
 
+		 uploadPage.clickStartButtonEachFile();
+
+		 Assert.assertTrue(uploadPage.isFileUploadedSuccess(beach));
+		 Assert.assertTrue(uploadPage.isFileUploadedSuccess(computer));
+		 Assert.assertTrue(uploadPage.isFileUploadedSuccess(mountain));
+	 }
+	 
+	 @Test
+	 public void TC_03_Upload_GoFile() {
+		 uploadPage.openUrl(driver, "https://gofile.io/uploadFiles");
+		 
+		 Assert.assertTrue(uploadPage.isLoadingIconAtMainDisappear());
+		 
+		 uploadPage.uploadMultipleFiles(driver, fileNames);
+		 
+		 Assert.assertTrue(uploadPage.isLoadingIconAtMainUploadDisappear());
+		 
+		 Assert.assertTrue(uploadPage.isMultipleProgessBarIconDisappear());
+		 
+		 Assert.assertTrue(uploadPage.isSuccessMessageDisplayed("Your files have been successfully uploaded"));
+		 
+		 uploadPage.clickToSuccessLink();
+		 
+		 Assert.assertTrue(uploadPage.isContentTableDisplayed());
+		 
+		 Assert.assertTrue(uploadPage.isDownloadButtonDisplayed(beach));
+		 Assert.assertTrue(uploadPage.isDownloadButtonDisplayed(computer));
+		 Assert.assertTrue(uploadPage.isDownloadButtonDisplayed(mountain));
+		 
+		 Assert.assertTrue(uploadPage.isPlayButtonDisplayed(beach));
+		 Assert.assertTrue(uploadPage.isPlayButtonDisplayed(computer));
+		 Assert.assertTrue(uploadPage.isPlayButtonDisplayed(mountain));
 	 }
 
 	 @AfterClass
