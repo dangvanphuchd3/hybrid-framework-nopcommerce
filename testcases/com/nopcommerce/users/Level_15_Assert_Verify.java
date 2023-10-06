@@ -1,7 +1,6 @@
 package com.nopcommerce.users;
 
 import org.openqa.selenium.WebDriver;
-import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
@@ -35,6 +34,12 @@ public class Level_15_Assert_Verify extends BaseTest {
 		 registerPage = homePage.clickToRegisterLink();
 		 
 		 registerPage.clickToRegisterButton();
+		 
+		 // Verify message error at FirstName -> FAILED
+		 verifyEquals(registerPage.getFirtNameErrorMessage(), "First name is required");
+		 
+		 // Verify message error at Email -> PASSED
+		 verifyEquals(registerPage.getEmailErrorMessage(),"Email is required.");
 
 		 registerPage.enterToFirstNameTextbox("John");
 		 registerPage.enterToLastNameTextbox("Wick");
@@ -43,8 +48,9 @@ public class Level_15_Assert_Verify extends BaseTest {
 		 registerPage.enterToConfirmPasswordTextbox("123456");
 
 		 registerPage.clickToRegisterButton();
-
-		 Assert.assertEquals(registerPage.getRegisterSuccessMessage(), "Your registration completed");
+		 
+		 // Verify register success message -> FAILED
+		 verifyEquals(registerPage.getRegisterSuccessMessage(), "Your registration completed..");
 
 	 }
 

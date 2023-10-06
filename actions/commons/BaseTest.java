@@ -91,7 +91,7 @@ public class BaseTest {
 			throw new RuntimeException("Browser name is not valid.");
 		}
 
-		 driver.get("https://www.jqueryscript.net/demo/CRUD-Data-Grid-Plugin-jQuery-Quickgrid/");
+		 driver.get("https://demo.nopcommerce.com/");
 		 driver.manage().window().maximize();
 		 driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(GlobalConstants.LONG_TIMEOUT));
 		 return driver;
