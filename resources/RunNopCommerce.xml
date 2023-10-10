@@ -5,7 +5,7 @@
   <parameter name="adminUrl" value="https://admin-demo.nopcommerce.com/" />
   
   <listeners>
-      <listeners class-name="commons.MethodListener" />
+      <listener class-name="commons.MethodListener" />
   </listeners>
   
   <test name="Run on Firefox">
