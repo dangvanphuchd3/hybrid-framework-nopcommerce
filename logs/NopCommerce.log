@@ -62,3 +62,35 @@
 [2023-10-18 12:50:37,109 INFO com.nopcommerce.users.Level_16_Log] - User_01 - Step 11: Click Register Button
 [2023-10-18 12:50:37,835 INFO com.nopcommerce.users.Level_16_Log] - User_01 - Step 12: Verify success message register is displayed
 [2023-10-18 12:50:37,913 INFO com.nopcommerce.users.Level_16_Log] - ------------------ FAILED ------------------
+[2023-10-19 20:43:59,021 INFO com.nopcommerce.users.Level_16_Log] - User_01 - Step 01: Verify Register link is displayed
+[2023-10-19 20:43:59,157 INFO com.nopcommerce.users.Level_16_Log] - ------------------ FAILED ------------------
+[2023-10-19 20:43:59,158 INFO com.nopcommerce.users.Level_16_Log] - User_01 - Step 02: Click To Register Link
+[2023-10-19 20:44:00,230 INFO com.nopcommerce.users.Level_16_Log] - User_01 - Step 03: Click Register Button
+[2023-10-19 20:44:00,531 INFO com.nopcommerce.users.Level_16_Log] - User_01 - Step 04: Verify error message at FirtName Textbox
+[2023-10-19 20:44:00,571 INFO com.nopcommerce.users.Level_16_Log] - ------------------ FAILED ------------------
+[2023-10-19 20:44:00,572 INFO com.nopcommerce.users.Level_16_Log] - User_01 - Step 05: Verify error message at Email Textbox
+[2023-10-19 20:44:00,608 INFO com.nopcommerce.users.Level_16_Log] - ------------------ PASSED ------------------
+[2023-10-19 20:44:00,608 INFO com.nopcommerce.users.Level_16_Log] - User_01 - Step 06: Enter to FirstName Textbox
+[2023-10-19 20:44:00,684 INFO com.nopcommerce.users.Level_16_Log] - User_01 - Step 07: Enter to LastName Textbox
+[2023-10-19 20:44:00,773 INFO com.nopcommerce.users.Level_16_Log] - User_01 - Step 08: Enter to Email Textbox
+[2023-10-19 20:44:00,869 INFO com.nopcommerce.users.Level_16_Log] - User_01 - Step 09: Enter to Password Textbox
+[2023-10-19 20:44:00,955 INFO com.nopcommerce.users.Level_16_Log] - User_01 - Step 10: Enter to ConfirmPassword Textbox
+[2023-10-19 20:44:01,040 INFO com.nopcommerce.users.Level_16_Log] - User_01 - Step 11: Click Register Button
+[2023-10-19 20:44:01,813 INFO com.nopcommerce.users.Level_16_Log] - User_01 - Step 12: Verify success message register is displayed
+[2023-10-19 20:44:01,867 INFO com.nopcommerce.users.Level_16_Log] - ------------------ FAILED ------------------
+[2023-10-19 20:58:58,257 INFO com.nopcommerce.users.Level_16_Log] - Register - Step 01: Verify Register link is displayed
+[2023-10-19 20:58:58,389 INFO com.nopcommerce.users.Level_16_Log] - ------------------ FAILED ------------------
+[2023-10-19 20:58:58,390 INFO com.nopcommerce.users.Level_16_Log] - Register - Step 02: Click To Register Link
+[2023-10-19 20:58:59,468 INFO com.nopcommerce.users.Level_16_Log] - Register - Step 03: Click Register Button
+[2023-10-19 20:58:59,766 INFO com.nopcommerce.users.Level_16_Log] - Register - Step 04: Verify error message at 'FirtName' Textbox is 'First name is required.'
+[2023-10-19 20:58:59,806 INFO com.nopcommerce.users.Level_16_Log] - ------------------ FAILED ------------------
+[2023-10-19 20:58:59,807 INFO com.nopcommerce.users.Level_16_Log] - Register - Step 05: Verify error message at 'Email' Textbox is 'Email is required.'
+[2023-10-19 20:58:59,842 INFO com.nopcommerce.users.Level_16_Log] - ------------------ PASSED ------------------
+[2023-10-19 20:58:59,842 INFO com.nopcommerce.users.Level_16_Log] - Register - Step 06: Enter to 'FirstName' Textbox is John
+[2023-10-19 20:58:59,906 INFO com.nopcommerce.users.Level_16_Log] - Register - Step 07: Enter to 'LastName' Textbox is Wick
+[2023-10-19 20:58:59,972 INFO com.nopcommerce.users.Level_16_Log] - Register - Step 08: Enter to 'Email' Textbox is johnwick5490@gmail.com
+[2023-10-19 20:59:00,074 INFO com.nopcommerce.users.Level_16_Log] - Register - Step 09: Enter to 'Password' Textbox
+[2023-10-19 20:59:00,137 INFO com.nopcommerce.users.Level_16_Log] - Register - Step 10: Enter to 'ConfirmPassword' Textbox
+[2023-10-19 20:59:00,199 INFO com.nopcommerce.users.Level_16_Log] - Register - Step 11: Click Register Button
+[2023-10-19 20:59:00,927 INFO com.nopcommerce.users.Level_16_Log] - Register - Step 12: Verify success message register is displayed
+[2023-10-19 20:59:00,986 INFO com.nopcommerce.users.Level_16_Log] - ------------------ FAILED ------------------
