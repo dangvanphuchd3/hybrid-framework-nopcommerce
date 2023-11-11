@@ -12,7 +12,7 @@ import pageObjects.HomePageObject;
 import pageObjects.LoginPageObject;
 import pageObjects.RegisterPageObject;
 
-public class Level_16_Log extends BaseTest {
+public class Level_17_ReportNG extends BaseTest {
 	 private WebDriver driver;
 	 private HomePageObject homePage;
 	 private RegisterPageObject registerPage;
@@ -70,7 +70,7 @@ public class Level_16_Log extends BaseTest {
 		 registerPage.clickToRegisterButton();
 		 
 		 log.info("Register - Step 07: Verify success message register is displayed");
-		 verifyEquals(registerPage.getRegisterSuccessMessage(), "Your registration completed");
+		 verifyEquals(registerPage.getRegisterSuccessMessage(), "Your registration completed.");
 	 }
 	 @AfterClass
 	 public void afterClass() {

@@ -1,0 +1,48 @@
+[11-11-2023 14:52:58.997 INFO com.nopcommerce.users.Level_16_Log] - Register - Step 01: Verify Register link is displayed
+[11-11-2023 14:52:59.094 INFO com.nopcommerce.users.Level_16_Log] - ------------------ FAILED ------------------
+[11-11-2023 14:52:59.094 INFO com.nopcommerce.users.Level_16_Log] - Register - Step 02: Click To Register Link
+[11-11-2023 14:53:00.253 INFO com.nopcommerce.users.Level_16_Log] - Register - Step 03: Click Register Button
+[11-11-2023 14:53:00.605 INFO com.nopcommerce.users.Level_16_Log] - Register - Step 04: Verify error message at 'FirtName' Textbox is 'First name is required.'
+[11-11-2023 14:53:00.656 INFO com.nopcommerce.users.Level_16_Log] - ------------------ FAILED ------------------
+[11-11-2023 14:53:00.657 INFO com.nopcommerce.users.Level_16_Log] - Register - Step 05: Verify error message at 'Email' Textbox is 'Email is required.'
+[11-11-2023 14:53:00.689 INFO com.nopcommerce.users.Level_16_Log] - ------------------ PASSED ------------------
+[11-11-2023 14:53:00.695 INFO com.nopcommerce.users.Level_16_Log] - Register - Step 01: Enter to 'FirstName' Textbox is John
+[11-11-2023 14:53:02.408 INFO com.nopcommerce.users.Level_16_Log] - Register - Step 02: Enter to 'LastName' Textbox is Wick
+[11-11-2023 14:53:02.483 INFO com.nopcommerce.users.Level_16_Log] - Register - Step 03: Enter to 'Email' Textbox is johnwick9073@gmail.com
+[11-11-2023 14:53:02.544 INFO com.nopcommerce.users.Level_16_Log] - Register - Step 04: Enter to 'Password' Textbox
+[11-11-2023 14:53:02.606 INFO com.nopcommerce.users.Level_16_Log] - Register - Step 05: Enter to 'ConfirmPassword' Textbox
+[11-11-2023 14:53:02.672 INFO com.nopcommerce.users.Level_16_Log] - Register - Step 06: Click Register Button
+[11-11-2023 14:53:04.176 INFO com.nopcommerce.users.Level_16_Log] - Register - Step 07: Verify success message register is displayed
+[11-11-2023 14:53:04.236 INFO com.nopcommerce.users.Level_16_Log] - ------------------ PASSED ------------------
+[11-11-2023 14:53:08.638 INFO com.nopcommerce.users.Level_16_Log] - Register - Step 01: Verify Register link is displayed
+[11-11-2023 14:53:08.718 INFO com.nopcommerce.users.Level_16_Log] - ------------------ FAILED ------------------
+[11-11-2023 14:53:08.718 INFO com.nopcommerce.users.Level_16_Log] - Register - Step 02: Click To Register Link
+[11-11-2023 14:53:09.897 INFO com.nopcommerce.users.Level_16_Log] - Register - Step 03: Click Register Button
+[11-11-2023 14:53:10.036 INFO com.nopcommerce.users.Level_16_Log] - Register - Step 04: Verify error message at 'FirtName' Textbox is 'First name is required.'
+[11-11-2023 14:53:10.107 INFO com.nopcommerce.users.Level_16_Log] - ------------------ FAILED ------------------
+[11-11-2023 14:53:10.107 INFO com.nopcommerce.users.Level_16_Log] - Register - Step 05: Verify error message at 'Email' Textbox is 'Email is required.'
+[11-11-2023 14:53:10.164 INFO com.nopcommerce.users.Level_16_Log] - ------------------ PASSED ------------------
+[11-11-2023 14:53:10.167 INFO com.nopcommerce.users.Level_16_Log] - Register - Step 01: Enter to 'FirstName' Textbox is John
+[11-11-2023 14:53:11.386 INFO com.nopcommerce.users.Level_16_Log] - Register - Step 02: Enter to 'LastName' Textbox is Wick
+[11-11-2023 14:53:11.559 INFO com.nopcommerce.users.Level_16_Log] - Register - Step 03: Enter to 'Email' Textbox is johnwick2642@gmail.com
+[11-11-2023 14:53:11.723 INFO com.nopcommerce.users.Level_16_Log] - Register - Step 04: Enter to 'Password' Textbox
+[11-11-2023 14:53:11.882 INFO com.nopcommerce.users.Level_16_Log] - Register - Step 05: Enter to 'ConfirmPassword' Textbox
+[11-11-2023 14:53:12.032 INFO com.nopcommerce.users.Level_16_Log] - Register - Step 06: Click Register Button
+[11-11-2023 14:53:12.865 INFO com.nopcommerce.users.Level_16_Log] - Register - Step 07: Verify success message register is displayed
+[11-11-2023 14:53:12.926 INFO com.nopcommerce.users.Level_16_Log] - ------------------ PASSED ------------------
+[11-11-2023 14:53:16.886 INFO com.nopcommerce.users.Level_16_Log] - Register - Step 01: Verify Register link is displayed
+[11-11-2023 14:53:16.980 INFO com.nopcommerce.users.Level_16_Log] - ------------------ FAILED ------------------
+[11-11-2023 14:53:16.980 INFO com.nopcommerce.users.Level_16_Log] - Register - Step 02: Click To Register Link
+[11-11-2023 14:53:17.513 INFO com.nopcommerce.users.Level_16_Log] - Register - Step 03: Click Register Button
+[11-11-2023 14:53:17.656 INFO com.nopcommerce.users.Level_16_Log] - Register - Step 04: Verify error message at 'FirtName' Textbox is 'First name is required.'
+[11-11-2023 14:53:17.713 INFO com.nopcommerce.users.Level_16_Log] - ------------------ FAILED ------------------
+[11-11-2023 14:53:17.714 INFO com.nopcommerce.users.Level_16_Log] - Register - Step 05: Verify error message at 'Email' Textbox is 'Email is required.'
+[11-11-2023 14:53:17.760 INFO com.nopcommerce.users.Level_16_Log] - ------------------ PASSED ------------------
+[11-11-2023 14:53:17.763 INFO com.nopcommerce.users.Level_16_Log] - Register - Step 01: Enter to 'FirstName' Textbox is John
+[11-11-2023 14:53:18.299 INFO com.nopcommerce.users.Level_16_Log] - Register - Step 02: Enter to 'LastName' Textbox is Wick
+[11-11-2023 14:53:18.449 INFO com.nopcommerce.users.Level_16_Log] - Register - Step 03: Enter to 'Email' Textbox is johnwick3344@gmail.com
+[11-11-2023 14:53:18.606 INFO com.nopcommerce.users.Level_16_Log] - Register - Step 04: Enter to 'Password' Textbox
+[11-11-2023 14:53:18.754 INFO com.nopcommerce.users.Level_16_Log] - Register - Step 05: Enter to 'ConfirmPassword' Textbox
+[11-11-2023 14:53:18.892 INFO com.nopcommerce.users.Level_16_Log] - Register - Step 06: Click Register Button
+[11-11-2023 14:53:19.706 INFO com.nopcommerce.users.Level_16_Log] - Register - Step 07: Verify success message register is displayed
+[11-11-2023 14:53:19.754 INFO com.nopcommerce.users.Level_16_Log] - ------------------ PASSED ------------------

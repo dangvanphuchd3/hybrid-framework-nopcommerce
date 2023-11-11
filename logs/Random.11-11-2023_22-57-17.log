@@ -1,0 +1,32 @@
+[11-11-2023 22:57:25.888 INFO com.nopcommerce.users.Level_17_ReportNG] - Register - Step 01: Verify Register link is displayed
+[11-11-2023 22:57:26.084 INFO com.nopcommerce.users.Level_17_ReportNG] - ------------------ FAILED ------------------
+[11-11-2023 22:57:26.085 INFO com.nopcommerce.users.Level_17_ReportNG] - Register - Step 02: Click To Register Link
+[11-11-2023 22:57:28.025 INFO com.nopcommerce.users.Level_17_ReportNG] - Register - Step 03: Click Register Button
+[11-11-2023 22:57:28.365 INFO com.nopcommerce.users.Level_17_ReportNG] - Register - Step 04: Verify error message at 'FirtName' Textbox is 'First name is required.'
+[11-11-2023 22:57:28.417 INFO com.nopcommerce.users.Level_17_ReportNG] - ------------------ FAILED ------------------
+[11-11-2023 22:57:28.417 INFO com.nopcommerce.users.Level_17_ReportNG] - Register - Step 05: Verify error message at 'Email' Textbox is 'Email is required.'
+[11-11-2023 22:57:28.459 INFO com.nopcommerce.users.Level_17_ReportNG] - ------------------ PASSED ------------------
+[11-11-2023 22:57:28.541 INFO com.nopcommerce.users.Level_17_ReportNG] - Register - Step 01: Enter to 'FirstName' Textbox is John
+[11-11-2023 22:57:35.324 INFO com.nopcommerce.users.Level_17_ReportNG] - Register - Step 02: Enter to 'LastName' Textbox is Wick
+[11-11-2023 22:57:35.413 INFO com.nopcommerce.users.Level_17_ReportNG] - Register - Step 03: Enter to 'Email' Textbox is johnwick9187@gmail.com
+[11-11-2023 22:57:35.501 INFO com.nopcommerce.users.Level_17_ReportNG] - Register - Step 04: Enter to 'Password' Textbox
+[11-11-2023 22:57:35.571 INFO com.nopcommerce.users.Level_17_ReportNG] - Register - Step 05: Enter to 'ConfirmPassword' Textbox
+[11-11-2023 22:57:35.632 INFO com.nopcommerce.users.Level_17_ReportNG] - Register - Step 06: Click Register Button
+[11-11-2023 22:57:37.674 INFO com.nopcommerce.users.Level_17_ReportNG] - Register - Step 07: Verify success message register is displayed
+[11-11-2023 22:57:37.724 INFO com.nopcommerce.users.Level_17_ReportNG] - ------------------ FAILED ------------------
+[11-11-2023 22:57:49.638 INFO com.nopcommerce.users.Level_17_ReportNG] - Register - Step 01: Verify Register link is displayed
+[11-11-2023 22:57:49.747 INFO com.nopcommerce.users.Level_17_ReportNG] - ------------------ FAILED ------------------
+[11-11-2023 22:57:49.747 INFO com.nopcommerce.users.Level_17_ReportNG] - Register - Step 02: Click To Register Link
+[11-11-2023 22:57:52.784 INFO com.nopcommerce.users.Level_17_ReportNG] - Register - Step 03: Click Register Button
+[11-11-2023 22:57:52.934 INFO com.nopcommerce.users.Level_17_ReportNG] - Register - Step 04: Verify error message at 'FirtName' Textbox is 'First name is required.'
+[11-11-2023 22:57:53.021 INFO com.nopcommerce.users.Level_17_ReportNG] - ------------------ FAILED ------------------
+[11-11-2023 22:57:53.021 INFO com.nopcommerce.users.Level_17_ReportNG] - Register - Step 05: Verify error message at 'Email' Textbox is 'Email is required.'
+[11-11-2023 22:57:53.093 INFO com.nopcommerce.users.Level_17_ReportNG] - ------------------ PASSED ------------------
+[11-11-2023 22:57:53.255 INFO com.nopcommerce.users.Level_17_ReportNG] - Register - Step 01: Enter to 'FirstName' Textbox is John
+[11-11-2023 22:57:54.209 INFO com.nopcommerce.users.Level_17_ReportNG] - Register - Step 02: Enter to 'LastName' Textbox is Wick
+[11-11-2023 22:57:54.431 INFO com.nopcommerce.users.Level_17_ReportNG] - Register - Step 03: Enter to 'Email' Textbox is johnwick9879@gmail.com
+[11-11-2023 22:57:54.654 INFO com.nopcommerce.users.Level_17_ReportNG] - Register - Step 04: Enter to 'Password' Textbox
+[11-11-2023 22:57:54.811 INFO com.nopcommerce.users.Level_17_ReportNG] - Register - Step 05: Enter to 'ConfirmPassword' Textbox
+[11-11-2023 22:57:54.994 INFO com.nopcommerce.users.Level_17_ReportNG] - Register - Step 06: Click Register Button
+[11-11-2023 22:58:01.173 INFO com.nopcommerce.users.Level_17_ReportNG] - Register - Step 07: Verify success message register is displayed
+[11-11-2023 22:58:01.230 INFO com.nopcommerce.users.Level_17_ReportNG] - ------------------ FAILED ------------------

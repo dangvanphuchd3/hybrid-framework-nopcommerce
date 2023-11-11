@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite parallel="false" name="NopCommerce - Web Automation API">
+
+  <parameter name="userUrl" value="https://demo.nopcommerce.com/" />
+  <parameter name="adminUrl" value="https://admin-demo.nopcommerce.com/" />
+  
+  <listeners>
+      <listener class-name="commons.MethodListener" />
+      <listener class-name="org.uncommons.reportng.HTMLReporter" />
+      <listener class-name="org.uncommons.reportng.JUnitXMLReporter" />
+  </listeners>
+  
+  <test name="Payment Test Suite">
+  <parameter name="browser" value="firefox" />
+    <classes>
+      <class name="com.nopcommerce.users.Level_15_Assert_Verify"/>
+    </classes>
+  </test>
+  
+  <test name="User Test Suite">
+  <parameter name="browser" value="chrome" />
+    <classes>
+      <class name="com.nopcommerce.users.Level_15_Assert_Verify"/>
+    </classes>
+  </test>
+  
+</suite>
