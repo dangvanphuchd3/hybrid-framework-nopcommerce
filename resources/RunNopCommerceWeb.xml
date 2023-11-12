@@ -6,22 +6,14 @@
   
   <listeners>
       <listener class-name="commons.MethodListener" />
-      <listener class-name="reportConfig.ReportNGListener" />
-      <listener class-name="org.uncommons.reportng.HTMLReporter" />
-      <listener class-name="org.uncommons.reportng.JUnitXMLReporter" />
+      <listener class-name="reportConfig.ExtentTestListener" />
+
   </listeners>
   
   <test name="Run on Firefox">
   <parameter name="browser" value="firefox" />
     <classes>
-      <class name="com.nopcommerce.users.Level_17_ReportNG"/>
-    </classes>
-  </test>
-  
-  <test name="Run on Chrome">
-  <parameter name="browser" value="chrome" />
-    <classes>
-      <class name="com.nopcommerce.users.Level_17_ReportNG"/>
+      <class name="com.nopcommerce.users.Level_18_Extent_V3"/>
     </classes>
   </test>
   

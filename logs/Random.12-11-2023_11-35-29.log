@@ -1,0 +1,16 @@
+[12-11-2023 11:35:40.765 INFO com.nopcommerce.users.Level_18_Extent_V2] - Register - Step 01: Verify Register link is displayed
+[12-11-2023 11:35:40.923 INFO com.nopcommerce.users.Level_18_Extent_V2] - ------------------ FAILED ------------------
+[12-11-2023 11:35:40.924 INFO com.nopcommerce.users.Level_18_Extent_V2] - Register - Step 02: Click To Register Link
+[12-11-2023 11:35:42.078 INFO com.nopcommerce.users.Level_18_Extent_V2] - Register - Step 03: Click Register Button
+[12-11-2023 11:35:42.436 INFO com.nopcommerce.users.Level_18_Extent_V2] - Register - Step 04: Verify error message at 'FirtName' Textbox is 'First name is required.'
+[12-11-2023 11:35:42.510 INFO com.nopcommerce.users.Level_18_Extent_V2] - ------------------ FAILED ------------------
+[12-11-2023 11:35:42.511 INFO com.nopcommerce.users.Level_18_Extent_V2] - Register - Step 05: Verify error message at 'Email' Textbox is 'Email is required.'
+[12-11-2023 11:35:42.560 INFO com.nopcommerce.users.Level_18_Extent_V2] - ------------------ PASSED ------------------
+[12-11-2023 11:35:42.579 INFO com.nopcommerce.users.Level_18_Extent_V2] - Register - Step 01: Enter to 'FirstName' Textbox is John
+[12-11-2023 11:35:43.852 INFO com.nopcommerce.users.Level_18_Extent_V2] - Register - Step 02: Enter to 'LastName' Textbox is Wick
+[12-11-2023 11:35:43.955 INFO com.nopcommerce.users.Level_18_Extent_V2] - Register - Step 03: Enter to 'Email' Textbox is johnwick8248@gmail.com
+[12-11-2023 11:35:44.058 INFO com.nopcommerce.users.Level_18_Extent_V2] - Register - Step 04: Enter to 'Password' Textbox
+[12-11-2023 11:35:44.153 INFO com.nopcommerce.users.Level_18_Extent_V2] - Register - Step 05: Enter to 'ConfirmPassword' Textbox
+[12-11-2023 11:35:44.213 INFO com.nopcommerce.users.Level_18_Extent_V2] - Register - Step 06: Click Register Button
+[12-11-2023 11:35:45.476 INFO com.nopcommerce.users.Level_18_Extent_V2] - Register - Step 07: Verify success message register is displayed
+[12-11-2023 11:35:45.536 INFO com.nopcommerce.users.Level_18_Extent_V2] - ------------------ PASSED ------------------
