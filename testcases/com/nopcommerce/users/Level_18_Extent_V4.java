@@ -15,7 +15,7 @@ import pageObjects.HomePageObject;
 import pageObjects.LoginPageObject;
 import pageObjects.RegisterPageObject;
 
-public class Level_18_Extent_V3 extends BaseTest {
+public class Level_18_Extent_V4 extends BaseTest {
 	 private WebDriver driver;
 	 private HomePageObject homePage;
 	 private RegisterPageObject registerPage;
@@ -49,7 +49,8 @@ public class Level_18_Extent_V3 extends BaseTest {
 	 
 	 @Test
 	 public void User_02_Register_Success(Method method) {
-		 registerPage.refreshCurrentPage(driver);
+		 registerPage = homePage.clickToRegisterLink();
+		 
 		 registerPage.enterToFirstNameTextbox(firstName);
 		 
 		 registerPage.enterToLastNameTextbox(lastName);
