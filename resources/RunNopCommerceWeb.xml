@@ -13,7 +13,7 @@
   <test name="Run on Firefox">
   <parameter name="browser" value="firefox" />
     <classes>
-      <class name="com.nopcommerce.users.Level_18_Extent_V4"/>
+      <class name="com.nopcommerce.users.Level_18_Extent_V5"/>
     </classes>
   </test>
   
