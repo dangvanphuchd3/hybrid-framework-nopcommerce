@@ -1,0 +1,1 @@
+{"uuid":"34debe07-45ba-4095-a4fd-0aeff193efaf","name":"NopCommerce - Web Automation UI","children":["1bffe59b-1b57-4cff-8bda-9aa41aa8036a"],"befores":[{"name":"deleteFileInReport","status":"passed","stage":"finished","description":"","steps":[],"attachments":[],"parameters":[],"start":1700065062451,"stop":1700065062462}],"afters":[],"start":1700065062417,"stop":1700065076157}
