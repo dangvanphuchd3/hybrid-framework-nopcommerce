@@ -8,6 +8,7 @@ import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -130,7 +131,7 @@ public class BasePage {
 		} else if (locatorValue.startsWith("id=") || locatorValue.startsWith("Id=") || locatorValue.startsWith("ID=")) {
 			by = By.id(locatorValue.substring(3));
 		} else if (locatorValue.startsWith("name=") || locatorValue.startsWith("Name=") || locatorValue.startsWith("NAME=")) {
-			by = By.name(locatorValue.substring(3));
+			by = By.name(locatorValue.substring(5));
 		} else if (locatorValue.startsWith("class=") || locatorValue.startsWith("Class=") || locatorValue.startsWith("CLASS=")) {
 			by = By.className(locatorValue.substring(6));
 		} else if (locatorValue.startsWith("tagname=") || locatorValue.startsWith("Tagname=") || locatorValue.startsWith("TAGNAME=")) {
@@ -276,7 +277,16 @@ public class BasePage {
 	}
 
 	public boolean isElementDisplayed(WebDriver driver, String locator) {
-		return getElement(driver, locator).isDisplayed();
+		boolean status;
+		try {
+			// Case 1: Element có hiển thị trên UI và có trong HTML: isDisplayed trả về true
+			// Case 2: Element không hiển thị trên UI và vẫn có trong HTML: isDisplayed trả về false
+			status = getElement(driver, locator).isDisplayed();
+		} catch (NoSuchElementException e) {
+			// Case 3: Element không hiển thị trên UI và ko có trong HTML: tự gán bằng fasle
+			status = false;
+		}
+		return status;
 	}
 
 	public boolean isElementDisplayed(WebDriver driver, String locator, String... restParmas) {
