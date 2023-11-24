@@ -40,7 +40,7 @@ public class Level_20_Element_Undisplayed extends BaseTest {
 	 @Test
 	 public void Home_02_Element_UnDisplayed_In_HTML() {
 		 homePage.enterToEmailTextbox("");
-		 // homePage.sleepInSecond(2);
+		 homePage.sleepInSecond(2);
 		 
 		 // Sau khi xóa dữ liệu của Email textbox đi - thì Confirm Email textbox không hiển thị trên UI
 		 // Nhưng vẫn có trong HTML
