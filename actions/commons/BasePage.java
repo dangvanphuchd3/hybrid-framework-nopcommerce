@@ -3,6 +3,7 @@ package commons;
 import java.time.Duration;
 import java.util.List;
 import java.util.Set;
+import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
@@ -275,18 +276,28 @@ public class BasePage {
 			clickToElement(driver, getDynamicLocator(locator, restParams));
 		}
 	}
-
+	
+	// Case 01: Element hiển thị và có trong HTML
+	// Case 02: Element có trong HTML, không có trong HTML
 	public boolean isElementDisplayed(WebDriver driver, String locator) {
-		boolean status;
-		try {
-			// Case 1: Element có hiển thị trên UI và có trong HTML: isDisplayed trả về true
-			// Case 2: Element không hiển thị trên UI và vẫn có trong HTML: isDisplayed trả về false
-			status = getElement(driver, locator).isDisplayed();
-		} catch (NoSuchElementException e) {
-			// Case 3: Element không hiển thị trên UI và ko có trong HTML: tự gán bằng fasle
-			status = false;
+		return getElement(driver, locator).isDisplayed();
+	}
+	
+	public void overrideGlobalTimeout(WebDriver driver, long timeOut) {
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(timeOut));
+	}
+	
+	public boolean isElementUnDisplayed(WebDriver driver, String locator) {
+		overrideGlobalTimeout(driver, GlobalConstants.SHORT_TIMEOUT);
+		List<WebElement> elements = getListElement(driver, locator);
+		overrideGlobalTimeout(driver, GlobalConstants.LONG_TIMEOUT);
+		if (elements.size() == 0) {// Element không hiển thị và không có trong HTML
+			return true;
+		} else if (elements.size() > 0 && !elements.get(0).isDisplayed()) {// Element không hiển thị và có trong HTML
+			return true;
+		} else {// Element visible and display in DOM
+			return false;
 		}
-		return status;
 	}
 
 	public boolean isElementDisplayed(WebDriver driver, String locator, String... restParmas) {

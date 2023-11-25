@@ -38,7 +38,7 @@ public class Level_20_Element_Undisplayed extends BaseTest {
 	 }
 	 
 	 @Test
-	 public void Home_02_Element_UnDisplayed_In_HTML() {
+	 public void Home_02_Element_UnDisplayed_In_HTML_01() {
 		 homePage.enterToEmailTextbox("");
 		 homePage.sleepInSecond(2);
 		 
@@ -49,20 +49,20 @@ public class Level_20_Element_Undisplayed extends BaseTest {
 	 }
 	 
 	 @Test
-	 public void Home_03_Element_UnDisplayed_Not_In_HTML() {
+	 public void Home_03_Element_UnDisplayed_Not_In_HTML_02() {
 		 homePage.clickToCloseSignUpPopup();
 		 
 		 log.info("Verify FirstName textbox is not displayed");
-		 verifyFalse(homePage.isFirstNameTextboxDisplayed());
+		 verifyTrue(homePage.isFirstNameTextboxUnDisplayed());
 		 
 		 log.info("Verify SurName textbox is not displayed");
-		 verifyFalse(homePage.isSurNameTextboxDisplayed());
+		 verifyTrue(homePage.isSurNameTextboxUnDisplayed());
 		 
 		 log.info("Verify Email textbox is not displayed");
-		 verifyFalse(homePage.isEmailTextboxDisplayed());
+		 verifyTrue(homePage.isEmailTextboxUnDisplayed());
 		 
 		 log.info("Verify Password textbox is not displayed");
-		 verifyFalse(homePage.isPasswordTextboxDisplayed());
+		 verifyTrue(homePage.isPasswordTextboxUnDisplayed());
 	 }
 	 
 	 @AfterClass

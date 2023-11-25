@@ -485,3 +485,33 @@
 [23-11-2023 21:06:51.930 INFO com.facebook.home.Level_20_Element_Undisplayed] - Verify Confirm Email textbox is not displayed
 [23-11-2023 21:06:51.974 INFO com.facebook.home.Level_20_Element_Undisplayed] - ------------------ FAILED ------------------
 [23-11-2023 21:06:55.072 INFO com.facebook.home.Level_20_Element_Undisplayed] - Verify FirstName textbox is not displayed
+[24-11-2023 20:31:39.335 INFO com.facebook.home.Level_20_Element_Undisplayed] - ------------------ PASSED ------------------
+[24-11-2023 20:31:39.402 INFO com.facebook.home.Level_20_Element_Undisplayed] - ------------------ PASSED ------------------
+[24-11-2023 20:31:39.456 INFO com.facebook.home.Level_20_Element_Undisplayed] - ------------------ PASSED ------------------
+[24-11-2023 20:31:39.529 INFO com.facebook.home.Level_20_Element_Undisplayed] - ------------------ PASSED ------------------
+[24-11-2023 20:31:39.912 INFO com.facebook.home.Level_20_Element_Undisplayed] - ------------------ PASSED ------------------
+[24-11-2023 20:31:42.320 INFO com.facebook.home.Level_20_Element_Undisplayed] - Verify Confirm Email textbox is not displayed
+[24-11-2023 20:31:42.386 INFO com.facebook.home.Level_20_Element_Undisplayed] - ------------------ PASSED ------------------
+[24-11-2023 20:31:45.571 INFO com.facebook.home.Level_20_Element_Undisplayed] - Verify FirstName textbox is not displayed
+[24-11-2023 20:32:15.686 INFO com.facebook.home.Level_20_Element_Undisplayed] - ------------------ PASSED ------------------
+[24-11-2023 20:32:15.687 INFO com.facebook.home.Level_20_Element_Undisplayed] - Verify SurName textbox is not displayed
+[24-11-2023 20:32:45.729 INFO com.facebook.home.Level_20_Element_Undisplayed] - ------------------ PASSED ------------------
+[24-11-2023 20:32:45.731 INFO com.facebook.home.Level_20_Element_Undisplayed] - Verify Email textbox is not displayed
+[24-11-2023 20:33:15.803 INFO com.facebook.home.Level_20_Element_Undisplayed] - ------------------ PASSED ------------------
+[24-11-2023 20:33:15.804 INFO com.facebook.home.Level_20_Element_Undisplayed] - Verify Password textbox is not displayed
+[24-11-2023 20:33:45.835 INFO com.facebook.home.Level_20_Element_Undisplayed] - ------------------ PASSED ------------------
+[25-11-2023 22:09:41.382 INFO com.facebook.home.Level_20_Element_Undisplayed] - ------------------ PASSED ------------------
+[25-11-2023 22:09:41.429 INFO com.facebook.home.Level_20_Element_Undisplayed] - ------------------ PASSED ------------------
+[25-11-2023 22:09:41.462 INFO com.facebook.home.Level_20_Element_Undisplayed] - ------------------ PASSED ------------------
+[25-11-2023 22:09:41.494 INFO com.facebook.home.Level_20_Element_Undisplayed] - ------------------ PASSED ------------------
+[25-11-2023 22:09:41.776 INFO com.facebook.home.Level_20_Element_Undisplayed] - ------------------ PASSED ------------------
+[25-11-2023 22:09:43.996 INFO com.facebook.home.Level_20_Element_Undisplayed] - Verify Confirm Email textbox is not displayed
+[25-11-2023 22:09:44.027 INFO com.facebook.home.Level_20_Element_Undisplayed] - ------------------ PASSED ------------------
+[25-11-2023 22:09:47.171 INFO com.facebook.home.Level_20_Element_Undisplayed] - Verify FirstName textbox is not displayed
+[25-11-2023 22:09:52.287 INFO com.facebook.home.Level_20_Element_Undisplayed] - ------------------ PASSED ------------------
+[25-11-2023 22:09:52.288 INFO com.facebook.home.Level_20_Element_Undisplayed] - Verify SurName textbox is not displayed
+[25-11-2023 22:09:57.341 INFO com.facebook.home.Level_20_Element_Undisplayed] - ------------------ PASSED ------------------
+[25-11-2023 22:09:57.341 INFO com.facebook.home.Level_20_Element_Undisplayed] - Verify Email textbox is not displayed
+[25-11-2023 22:10:02.394 INFO com.facebook.home.Level_20_Element_Undisplayed] - ------------------ PASSED ------------------
+[25-11-2023 22:10:02.394 INFO com.facebook.home.Level_20_Element_Undisplayed] - Verify Password textbox is not displayed
+[25-11-2023 22:10:07.427 INFO com.facebook.home.Level_20_Element_Undisplayed] - ------------------ PASSED ------------------
