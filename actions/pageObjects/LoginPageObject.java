@@ -2,14 +2,15 @@ package pageObjects;
 
 import org.openqa.selenium.WebDriver;
 
-import commons.BasePage;
+import commons.BaseElement;
 import commons.PageGeneratorManager;
 import pageUIs.LoginPageUI;
 
-public class LoginPageObject extends BasePage {
+public class LoginPageObject extends BaseElement {
 	private WebDriver driver;
 
 	public LoginPageObject(WebDriver driver) {
+		super(driver);
 		this.driver = driver;
 	}
 
@@ -36,3 +37,4 @@ public class LoginPageObject extends BasePage {
 	}
 
 }
+;

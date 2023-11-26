@@ -17,6 +17,4 @@ public class RegisterPageUI {
 	public static final String PASSWORD_TEXTBOX = "id=Password";
 	public static final String CONFIRM_PASSWORD_TEXTBOX = "id=ConfirmPassword";
 
-	public static final String HOME_PAGE_LOGO_IMAGE = "xpath=//div[@class='header-logo']//img";
-
 }

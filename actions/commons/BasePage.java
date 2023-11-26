@@ -3,13 +3,11 @@ package commons;
 import java.time.Duration;
 import java.util.List;
 import java.util.Set;
-import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -21,6 +19,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import pageObjects.HomePageObject;
 import pageObjects.admin.AdminLoginPageObject;
+import pageUIs.BaseElementUI;
 import pageUIs.BasePageUI;
 
 public class BasePage {
@@ -432,7 +431,7 @@ public class BasePage {
 			fullFileName = fullFileName + filePath + file + "\n";
 		}
 		fullFileName = fullFileName.trim();
-		getElement(driver, BasePageUI.UPLOAD_FILE_TYPE).sendKeys(fullFileName);
+		getElement(driver, BaseElementUI.UPLOAD_FILE_TYPE).sendKeys(fullFileName);
 	}
 
 	public void waitForElementVisible(WebDriver driver, String locator) {
