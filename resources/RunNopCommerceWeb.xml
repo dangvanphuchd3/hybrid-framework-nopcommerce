@@ -6,14 +6,19 @@
   
   <listeners>
       <listener class-name="commons.MethodListener" />
-      <listener class-name="reportConfig.AllureTestListener" />
+      <listener class-name="org.uncommons.reportng.HTMLReporter" />
+      <listener class-name="org.uncommons.reportng.JUnitXMLReporter" />
 
   </listeners>
   
-  <test name="Run on Firefox">
+  <test name="Run on Firefox" preserve-order = "true">
   <parameter name="browser" value="firefox" />
     <classes>
-      <class name="com.nopcommerce.users.Level_21_Pattern_Object"/>
+      <class name="com.nopcommerce.share.Common_Register" />
+      
+      <class name="com.nopcommerce.share.Order"/>
+      <class name="com.nopcommerce.share.Product"/>
+      <class name="com.nopcommerce.share.Payment"/>
     </classes>
   </test>
   
