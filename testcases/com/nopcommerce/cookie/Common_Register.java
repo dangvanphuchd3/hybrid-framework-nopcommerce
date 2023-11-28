@@ -1,4 +1,4 @@
-package com.nopcommerce.share.cookie;
+package com.nopcommerce.cookie;
 
 import java.util.Set;
 
@@ -10,6 +10,7 @@ import org.testng.annotations.Parameters;
 
 import commons.BaseTest;
 import commons.PageGeneratorManager;
+import pageFactory.LoginPageObject;
 import pageObjects.HomePageObject;
 import pageObjects.RegisterPageObject;
 
@@ -17,8 +18,10 @@ public class Common_Register extends BaseTest {
 	 private WebDriver driver;
 	 private HomePageObject homePage;
 	 private RegisterPageObject registerPage;
+	 private pageObjects.LoginPageObject loginPage;
+	 private String password;
 	 
-	 public static String firstName, lastName, emailAddress, password;
+	 public static String firstName, lastName, emailAddress;
 	 public static Set<Cookie> cookies;
 
 	 @Parameters("browser")
@@ -44,6 +47,16 @@ public class Common_Register extends BaseTest {
 		 registerPage.clickToRegisterButton();
 
 		 Assert.assertEquals(registerPage.getRegisterSuccessMessage(), "Your registration completed");
+		 
+		 registerPage.clickToHomePageLogo();
+		 homePage = PageGeneratorManager.getHomePage(driver);
+
+		 homePage.clickToLoginLink();
+		 loginPage = PageGeneratorManager.getLoginPage(driver);
+
+		 loginPage.enterToEmailTextbox(emailAddress);
+		 loginPage.enterToPasswordTextbox(password);
+		 loginPage.clickToLoginButton();
 		 
 		 cookies = registerPage.getBrowserCookies(driver);
 		 

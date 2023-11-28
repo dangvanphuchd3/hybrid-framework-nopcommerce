@@ -1,4 +1,4 @@
-package com.nopcommerce.share.cookie;
+package com.nopcommerce.cookie;
 
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
@@ -28,19 +28,16 @@ public class Payment extends BaseTest {
 		 homePage = PageGeneratorManager.getHomePage(driver);
 
 		 loginPage = homePage.clickToLoginLink();
+		 
+		 loginPage.setCookies(driver, Common_Register.cookies);
+		 loginPage.sleepInSecond(5);
+		 loginPage.refreshCurrentPage(driver);
 
-		 loginPage.enterToEmailTextbox(Common_Register.emailAddress);
-		 loginPage.enterToPasswordTextbox(Common_Register.password);
-		 homePage = loginPage.clickToLoginButton();
-
-		 customerPage = homePage.clickToMyAccountLink();
+		 customerPage = homePage.openMyAccountLink();
 
 		 Assert.assertEquals(customerPage.getFirstNameAttributeValue(), Common_Register.firstName);
 		 Assert.assertEquals(customerPage.getLastNameAttributeValue(), Common_Register.lastName);
 		 Assert.assertEquals(customerPage.getEmailAttributeValue(), Common_Register.emailAddress);
-		 
-		 System.out.println("Email at Payment = " + Common_Register.emailAddress);
-		 System.out.println("Password at Payment = " + Common_Register.password);
 	 }
 
 	 @Test

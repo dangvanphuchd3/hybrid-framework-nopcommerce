@@ -1,4 +1,4 @@
-package com.nopcommerce.share.cookie;
+package com.nopcommerce.cookie;
 
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
@@ -14,7 +14,7 @@ import pageObjects.HomePageObject;
 import pageObjects.LoginPageObject;
 import pageObjects.RegisterPageObject;
 
-public class Order extends BaseTest {
+public class Product extends BaseTest {
 	 WebDriver driver;
 	 HomePageObject homePage;
 	 RegisterPageObject registerPage;
@@ -26,38 +26,32 @@ public class Order extends BaseTest {
 	 public void beforeClass(String browserName) {
 		 driver = getBrowserDriver(browserName);
 		 homePage = PageGeneratorManager.getHomePage(driver);
-
+		 
 		 loginPage = homePage.clickToLoginLink();
-
+		 
 		 loginPage.setCookies(driver, Common_Register.cookies);
 		 loginPage.sleepInSecond(5);
 		 loginPage.refreshCurrentPage(driver);
 
-		 customerPage = homePage.clickToMyAccountLink();
+		 customerPage = homePage.openMyAccountLink();
 
 		 Assert.assertEquals(customerPage.getFirstNameAttributeValue(), Common_Register.firstName);
 		 Assert.assertEquals(customerPage.getLastNameAttributeValue(), Common_Register.lastName);
 		 Assert.assertEquals(customerPage.getEmailAttributeValue(), Common_Register.emailAddress);
-		 
 	 }
 
 	 @Test
-	 public void Order_01_Invalid_Address() {
+	 public void Product_01_New_Product() {
 		
 	 }
 	 
 	 @Test
-	 public void Order_02_Invalid_SSN() {
+	 public void Product_02_View_Product() {
 		
 	 }
 	 
 	 @Test
-	 public void Order_03_Invalid_Phone() {
-		
-	 }
-	 
-	 @Test
-	 public void Order_04_Sucess() {
+	 public void Product_03_Edit_Product() {
 		
 	 }
 
