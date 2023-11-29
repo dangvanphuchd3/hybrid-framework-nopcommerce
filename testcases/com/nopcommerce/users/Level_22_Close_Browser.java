@@ -61,9 +61,9 @@ public class Level_22_Close_Browser extends BaseTest {
 	
 	 }
 
-	 @AfterClass
+	 @AfterClass(alwaysRun = true)
 	 public void afterClass() {
-		 driver.quit();
+		 closeBrowser();
 	 }
 
 }
